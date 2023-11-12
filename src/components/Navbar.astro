@@ -1,9 +1,13 @@
 ---
+import { colors } from '../layouts/Layout.astro';
+
 interface Props {
 	pageName: string;
 }
 
 const { pageName } = Astro.props;
+const { white, primaryOrange100 } = colors;
+
 ---
 <nav>
 	<ul>
@@ -13,3 +17,14 @@ const { pageName } = Astro.props;
 		<li><a href="#">L</a>
 	</ul>
 </nav>
+
+<style define:vars={{ white, primaryOrange100 }}>
+	.navIcon {
+		width: 1.5em;
+		height: 1.5em;
+		color: var(--white);
+	}
+	nav {
+		background-color: var(--primaryOrange100);
+	}
+</style>
