@@ -1,0 +1,41 @@
+name: 機能要望
+description: アプリケーションに追加してほしい機能や改善点を提案する
+title: "feat: "
+labels: [enhancement]
+body:
+  - type: input
+    id: summary
+    attributes:
+      label: What? 何をしたいか
+      description: 追加や改善してほしい機能や点を簡潔に説明してください
+      placeholder: "アプリケーションにダークモードを追加してほしい"
+    validations:
+      required: true
+  - type: textarea
+    id: background
+    attributes:
+      label: Why? なぜその機能や改善点が必要か
+      description: その機能や改善点がなぜ必要なのか、それを実現することでどのようなメリットがあるのかを記述してください
+      placeholder: |
+        - アプリケーションを夜間使用するときに配慮したいため
+        - ダークモードはユーザーに好まれており、トレンドであるため
+        - 色覚異常者などへのユーザービリティを向上させるため
+    validations:
+      required: false
+  - type: textarea
+    id: proposal
+    attributes:
+      label: How? どうしたいか
+      description: どのようにその機能や改善点を実現するか、具体的な仕様やデザインなどを記述してください
+      placeholder: |
+        - [ ] アプリケーションの設定画面にダークモードのオン/オフスイッチを追加する
+        - [ ] ダークモードがオンの場合は、背景色を黒または暗いグレーにし、文字色を白または明るいグレーにする
+        - [ ] ダークモードがオフの場合は、現在の配色を維持する
+        - [ ] ダークモードの切り替えはアプリケーションの再起動なしに反映されるようにする
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: 参考資料
+      description: 要望に関連する画像やリンクなどがあれば添付してください
+  
