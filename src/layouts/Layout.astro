@@ -7,15 +7,6 @@ interface Props {
 
 const { title } = Astro.props;
 
-// 色変数
-export const colors = {
-	black: '#000',
-	white: '#fff',
-	primaryBlack: "#454545",
-	primaryOrange300: "#FFE6C7",
-	primaryOrange200: "#FFA114",
-	primaryOrange100: "#CB6E00",
-};
 const pageTitles = {
 	index: "スポーツ大会2023-ホーム",
 	map: "スポーツ大会2023-地図",
@@ -43,7 +34,12 @@ const pageTitles = {
 </html>
 <style is:global>
 	:root {
-		
+		--color-black: #000;
+		--color-white: #fff;
+		--color-primary-black: #454545;
+		--color-primary-orange-300: #FFE6C7;
+		--color-primary-orange-200: #FFA114;
+		--color-primary-orange-100: #CB6E00;
 	}
 	html {
 		font-family: system-ui, sans-serif;
