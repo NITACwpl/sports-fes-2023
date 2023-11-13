@@ -1,7 +1,29 @@
 ---
+import { Icon } from 'astro-icon';
+
 interface Props {
 	pageName: string;
 }
 
 const { pageName } = Astro.props;
+
 ---
+<nav>
+	<ul>
+		<li><a href="/"><Icon name={pageName==="index" ? "ion:home" : "ion:home-outline"} class="navIcon" /></a>
+		<li><a href="/results"><Icon name={pageName==="results" ? "ion:trophy" : "ion:trophy-outline"} class="navIcon" /></a>
+		<li><a href="/map"><Icon name={pageName==="map" ? "ion:map" : "ion:map-outline"} class="navIcon" /></a>
+		<li><a href="#"><Icon name="ion:list" class="navIcon" /></a>
+	</ul>
+</nav>
+
+<style>
+	.navIcon {
+		width: 1.5em;
+		height: 1.5em;
+		color: var(--color-white);
+	}
+	nav {
+		background-color: var(--color-primary-orange-100);
+	}
+</style>
