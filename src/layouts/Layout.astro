@@ -27,9 +27,13 @@ const pageTitles = {
 		<title>{pageTitles[title]}</title>
 	</head>
 	<body>
-		<Title />
-		<slot />
-		<Navbar pageName={title} />
+		<div class="container">
+			<Title />
+			<main>
+				<slot />
+			</main>
+			<Navbar pageName={title} />
+		</div>
 	</body>
 </html>
 <style is:global>
@@ -52,5 +56,21 @@ const pageTitles = {
 	body {
 		width: 100dvw;
 		height: 100dvh;
+		display: flex;
+		justify-content: center;
+	}
+	.container {
+		width: 100%;
+		max-width: 800px;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	main {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		overflow-y: auto;
 	}
 </style>
