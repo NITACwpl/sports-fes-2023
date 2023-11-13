@@ -9,11 +9,11 @@ const { pageName } = Astro.props;
 
 ---
 <nav>
-	<ul>
-		<li><a href="/"><Icon name={pageName==="index" ? "ion:home" : "ion:home-outline"} class="navIcon" /></a>
-		<li><a href="/results"><Icon name={pageName==="results" ? "ion:trophy" : "ion:trophy-outline"} class="navIcon" /></a>
-		<li><a href="/map"><Icon name={pageName==="map" ? "ion:map" : "ion:map-outline"} class="navIcon" /></a>
-		<li><a href="#"><Icon name="ion:list" class="navIcon" /></a>
+	<ul class="subete">
+		<li><a href="/"><Icon name={pageName==="index" ? "ion:home" : "ion:home-outline"} class="navIcon" /></a></li>
+		<li><a href="/results"><Icon name={pageName==="results" ? "ion:trophy" : "ion:trophy-outline"} class="navIcon" /></a></li>
+		<li><a href="/map"><Icon name={pageName==="map" ? "ion:map" : "ion:map-outline"} class="navIcon" /></a></li>
+		<li><a href="#"><Icon name="ion:list" class="navIcon" /></a></li>
 	</ul>
 </nav>
 
