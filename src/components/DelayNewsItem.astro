@@ -1,0 +1,60 @@
+---
+import { Icon } from 'astro-icon';
+
+interface Props {
+	name: string;
+    updateAt: string; // intに変更？？
+    delay: string; // intに変更？？
+    isLastContent: boolean;
+}
+
+const { name, updateAt, delay, isLastContent } = Astro.props;
+
+---
+<div class="tableContent">
+    <span class="name text-16">{name}</span>
+    <div class="delayValue">
+        <div class="updateAt">
+            <Icon name="ion:time-outline" class="timeIcon" />
+            <span class="num-10">{updateAt}</span>
+        </div>
+        <div class="delay text-12">
+            <span class="delayTime num-24">{delay}</span>
+            分
+        </div>
+    </div>
+</div>
+
+<style>
+    .tableContent {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+        background-color: var(--color-primary-orange-300);
+        color: var(--color-black);
+    }
+
+    .timeIcon {
+		width: 12px;
+		height: 12px;
+		color: var(--color-black);
+    }
+    .name {
+        flex: 1;
+    }
+    .updateAt {
+        display: flex;
+        align-items: center;
+    }
+    .delayValue {
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+    }
+    .delayTime {
+        color: var(--color-primary-orange-100);
+    }
+</style>
