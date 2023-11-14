@@ -1,6 +1,24 @@
 ---
 import SubTitle from "../../components/SubTitle.astro";
 import DelayNewsItem from "../../components/DelayNewsItem.astro";
+
+const delayValues = [
+  {
+    name: "ソフトテニス",
+    updateAt: "12:30",
+    delay: "10",
+  },
+  {
+    name: "サッカー",
+    updateAt: "11:30",
+    delay: "10",
+  },
+  {
+    name: "野球",
+    updateAt: "12:00",
+    delay: "10",
+  },
+];
 ---
 
 <div class="delayNews">
@@ -8,14 +26,14 @@ import DelayNewsItem from "../../components/DelayNewsItem.astro";
   <div class="table">
     <div class="tableTitle">
       <div class="name text-12">種目</div>
-      <div class="delayValue">
+      <div class="delayValueTitle">
         <div class="updateAt text-10">更新時刻</div>
         <div class="delay text-12">遅延時間</div>
       </div>
     </div>
-    <DelayNewsItem name="ソフトテニス" updateAt="12:30" delay="10" isLastContent=false />
-    <DelayNewsItem name="サッカー" updateAt="11:30" delay="10" isLastContent=false />
-    <DelayNewsItem name="野球" updateAt="12:00" delay="10" isLastContent=true />
+    {delayValues.map((delayValue, index) => (
+      <DelayNewsItem name={delayValue.name} updateAt={delayValue.updateAt} delay={delayValue.delay} isLastContent={index == delayValues.length - 1} />
+    ))}
   </div>
 </div>
 
@@ -39,7 +57,7 @@ import DelayNewsItem from "../../components/DelayNewsItem.astro";
   .name {
     flex: 1;
   }
-  .delayValue {
+  .delayValueTitle {
     display: flex;
     align-items: center;
     column-gap: 10px;

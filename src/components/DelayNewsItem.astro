@@ -11,7 +11,7 @@ interface Props {
 const { name, updateAt, delay, isLastContent } = Astro.props;
 
 ---
-<div class="tableContent">
+<div class="tableContent" id={isLastContent ? "lastItem" : ""}>
     <span class="name text-16">{name}</span>
     <div class="delayValue">
         <div class="updateAt">
@@ -56,5 +56,8 @@ const { name, updateAt, delay, isLastContent } = Astro.props;
     }
     .delayTime {
         color: var(--color-primary-orange-100);
+    }
+    #lastItem {
+        border-radius: 0 0 4px 4px;
     }
 </style>
