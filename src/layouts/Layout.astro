@@ -2,6 +2,7 @@
 import '@fontsource/roboto-condensed';
 import '@fontsource/zen-kaku-gothic-antique';
 
+import FallAnimation from '../components/FallAnimation.astro';
 import Title from '../components/Title.astro';
 import Navbar from '../components/Navbar.astro';
 interface Props {
@@ -30,13 +31,15 @@ const pageTitles = {
 		<title>{pageTitles[title]}</title>
 	</head>
 	<body>
-		<div class="container">
-			<Title />
-			<main>
-				<slot />
-			</main>
-			<Navbar pageName={title} />
-		</div>
+		<FallAnimation>
+			<div class="container">
+				<Title />
+				<main>
+					<slot />
+				</main>
+				<Navbar pageName={title} />
+			</div>
+		</FallAnimation>
 	</body>
 </html>
 <style is:global>
@@ -113,4 +116,13 @@ const pageTitles = {
 		padding: 0 10px;
 		background-color: var(--color-white);
 	}
+
+	/* JSで管理していてmoduleCSSだとバグるので、、 */
+    .leaf {
+        background-color: #f00; /* TODO */
+        border-radius: 50%;
+        position: absolute;
+        animation: fall 10s linear;
+		z-index: 0;
+    }
 </style>
