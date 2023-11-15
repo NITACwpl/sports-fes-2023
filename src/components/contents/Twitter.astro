@@ -2,27 +2,54 @@
 import SubTitle from "../../components/SubTitle.astro";
 ---
 
-<div class="twitter">
+
   <SubTitle title="Twitter情報" />
-  <div class="se">
-  <h1>Twitter</h1>
-  <p>~忘れ物情報など~</p>
+  <div class="twitter">
+  
+    <span>
+      <div class="se">
+       <h2 class="title text-20">Twitter</h2>
+       <h3 class="subTitle text-12">～忘れ物など～</h3>
+      </div>
+    </span>
+
+   
+   <blockquote class="twitter-tweet tw-align-center" >
+    <p lang="ja" dir="ltr">得点表を全クラス公表しました！<a href="https://t.co/1d2nMk3X4y">https://t.co/1d2nMk3X4y</a> 
+      <a href="https://t.co/SbW5A1a9ZN">pic.twitter.com/SbW5A1a9ZN
+      </a>
+    </p>&mdash; 明石高専学生会 (@NitacGakuseikai) 
+    <a href="https://twitter.com/NitacGakuseikai/status/1597862908553465856?ref_src=twsrc%5Etfw">November 30, 2022</a>
+    </blockquote> 
+   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    
   </div>
-</div>
+
 <style>
-  .twitter{
+ 
+ .twitter{
     width: 100%;
     height: auto;
+    text-align: center;
+    margin:0 auto;
+  }
 
-  }
-  h1{
-    text-align:left;
-    
-  }
-  p{
-    
-  }
+.test{
+  width:100%;
+  position:relative;
+  
+}
   .se{
-    float: left;
-    
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
   }
+
+  span{
+    vertical-align:baseline;
+  }
+
+  h3{
+    padding-left:10px;
+  }
+</style>
