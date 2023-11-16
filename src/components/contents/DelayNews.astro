@@ -63,3 +63,37 @@ const delayValues = [
     column-gap: 10px;
   }
 </style>
+
+<script>
+  let request = new XMLHttpRequest();
+
+  request.open('GET', 'https://sheets.googleapis.com/v4/spreadsheets/1JHpu-69XVPvqayDvuCzidMKfRDkBM58q3wqd4_ZHB5c/values/WEB%E5%87%BA%E5%8A%9B%E7%94%A8?key=AIzaSyBO6fk23Zw_Nv7x5Y-UaGc1p67DNXO8_so');
+  request.send();
+
+  request.onreadystatechange = () => {
+    if (request.readyState == 4 && request.status == 200) {
+        let requestData = JSON.parse(request.responseText)
+        let data = requestData.values
+        let tempHeader = '<tr class="sokuho-title"><th class="sokuho-rank">RANK</th><th class="sokuho-class">CLASS</th><th class="sokuho-point">POINT</th></tr>'
+
+        let rankValueBack = 0
+        for (let i = 0; i < data.length; i++) {
+            let rankValue = i + 1
+            if (i !== 0 && data[i-1][1] === data[i][1]) rankValue = rankValueBack
+
+            let rankClass = "point-same"
+            if (data[i][2] === "up") {
+                rankClass = "point-up"
+            }
+            else if (data[i][2] === "down") {
+                rankClass = "point-down"
+            }
+            let temp = `<tr><td class="sokuho-rank">${rankValue}<span class="${rankClass}">→</span></td><td class="sokuho-class">${data[i][0]}</td><td class="sokuho-point">${data[i][1]}pt</td></tr>`
+            tempHeader += temp
+
+            rankValueBack = rankValue
+        }
+        document.getElementById('sokuho-wrapper').innerHTML = tempHeader
+    }
+  }
+</script>
