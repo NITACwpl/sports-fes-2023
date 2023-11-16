@@ -1,7 +1,78 @@
 ---
+import { Icon } from 'astro-icon';
 import SubTitle from "../../components/SubTitle.astro";
 ---
 
+<SubTitle title="ルールブック" />
 <div class="rulebook">
-    <SubTitle title="ルールブック" />
+    <a href="???" class="ruleItem">
+        <Icon name="ion:trophy" class="sportIcon" />
+        <p class="text-12 sportName">共通ルール</p>
+    </a>
+    <a href="???" class="ruleItem">
+        <Icon name="ion:basketball" class="sportIcon" />
+        <p class="text-12 sportName">バスケットボール</p>
+    </a>
+    <a href="???" class="ruleItem">
+        <Icon name="ion:trophy" class="sportIcon" />
+        <p class="text-12 sportName">卓球</p>
+    </a>
+    <a href="???" class="ruleItem">
+        <Icon name="ion:trophy" class="sportIcon" />
+        <p class="text-12 sportName">硬式テニス</p>
+    </a>
+    <a href="???" class="ruleItem">
+        <Icon name="ion:trophy" class="sportIcon" />
+        <p class="text-12 sportName">ソフトボール</p>
+    </a>
+    <a href="???" class="ruleItem">
+        <Icon name="ion:trophy" class="sportIcon" />
+        <p class="text-12 sportName">サッカー</p>
+    </a>
+    <a href="???" class="ruleItem">
+        <Icon name="ion:trophy" class="sportIcon" />
+        <p class="text-12 sportName">バドミントン</p>
+    </a>
+    <a href="???" class="ruleItem">
+        <Icon name="ion:trophy" class="sportIcon" />
+        <p class="text-12 sportName">バレーボール</p>
+    </a>
+    <a href="???" class="ruleItem">
+        <Icon name="ion:trophy" class="sportIcon" />
+        <p class="text-12 sportName">リレー</p>
+    </a>
+    <a href="???" class="ruleItem">
+        <Icon name="ion:trophy" class="sportIcon" />
+        <p class="text-12 sportName">綱引き</p>
+    </a>
 </div>
+
+<style>
+    .rulebook {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 14px;
+        row-gap: 14px;
+    }
+    .sportIcon {
+        width: 24px;
+        height: 24px;
+        color: var(--color-primary-orange-100);
+    }
+    .sportName {
+        color: var(--color-primary-black);
+    }
+    .ruleItem {
+        width: 128px;
+        height: 128px;
+        border-radius: 15px;
+        border: solid 2px var(--color-primary-orange-100);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 6px;
+        text-decoration: none;
+    }
+</style>
