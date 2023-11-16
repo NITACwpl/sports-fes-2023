@@ -8,12 +8,24 @@ interface Props {
 const { pageName } = Astro.props;
 
 ---
-<nav>
-	<ul class="subete">
+<nav class="subete">
+	<ul>
 		<li><a href="/"><Icon name={pageName==="index" ? "ion:home" : "ion:home-outline"} class="navIcon" /></a></li>
 		<li><a href="/results"><Icon name={pageName==="results" ? "ion:trophy" : "ion:trophy-outline"} class="navIcon" /></a></li>
 		<li><a href="/map"><Icon name={pageName==="map" ? "ion:map" : "ion:map-outline"} class="navIcon" /></a></li>
 		<li><a href="#"><Icon name="ion:list" class="navIcon" /></a></li>
+	</ul>
+
+</nav>
+<nav class="menu">
+	<ul>
+		<li><a href="">Home</a></li>
+		<li><a href="">遅延情報</a></li>
+		<li><a href="">タイムテーブル</a></li>
+		<li><a href="">ルールブック</a></li>
+		<li><a href="">Twitter情報</a></li>
+		<li><a href="">会場マップ</a></li>
+		<li id="menuopen"><a href="">試合結果</a></li>
 	</ul>
 </nav>
 
@@ -26,4 +38,61 @@ const { pageName } = Astro.props;
 	nav {
 		background-color: var(--color-primary-orange-100);
 	}
+	li{
+		list-style: none;
+		text-align: center;
+	}
+	.subete {
+		position: fixed;
+		max-width: 800px;
+		width: 100%;
+		bottom: 0px;
+		font-size: 0;
+		opacity: 0.9;
+		z-index: 99;
+	}
+
+	/*メニューを横並びにする*/
+	.subete ul{
+		display: flex;
+		list-style: none;
+		padding:0;
+		margin:0;
+		max-width: 800px;
+		width:100%;
+	}
+
+	.subete li{
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		max-width: 800px;
+		width: 25%;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		margin:0;
+		font-size: 14px;
+	}
+	.subete a{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.menu a{
+		text-decoration: none;
+	}
+	.menu{
+		transform: translateY(100vh);
+		transition: all .3s linear;
+		overflow-y: hidden;
+	}
+	/* アニメーション後のメニューの状態 */
+	.menu.is-active{
+		transform: translateY(-50vh);
+	}
 </style>
+<script>
+	document.querySelector('#menuopen').addEventListener('click', function(){
+    document.querySelector('.menu').classList.toggle('is-active');
+	});
+</script>
