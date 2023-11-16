@@ -1,5 +1,4 @@
 <div class="leaf-Container">
-    <span class="leaf"></span>
     <slot />
 </div>
 
@@ -21,7 +20,7 @@
         transform: rotate(-180deg);
     }
     10% {
-        opacity: 1;
+        opacity: var(--opacity-leaves);
         transform: translateX(-5px);
         transform: rotate(-144deg);
     }
@@ -54,7 +53,7 @@
         transform: rotate(108deg);
     }
     90% {
-        opacity: 1;
+        opacity: var(--opacity-leaves);
         transform: translateX(-5px);
         transform: rotate(144deg);
     }
@@ -74,7 +73,7 @@
         transform: rotate(180deg);
     }
     10% {
-        opacity: 1;
+        opacity: var(--opacity-leaves);
         transform: translateX(-5px);
         transform: rotate(144deg);
     }
@@ -107,7 +106,7 @@
         transform: rotate(-108deg);
     }
     90% {
-        opacity: 1;
+        opacity: var(--opacity-leaves);
         transform: translateX(-5px);
         transform: rotate(-144deg);
     }
@@ -121,6 +120,9 @@
 </style>
 
 <style is:global>
+    :root {
+        --opacity-leaves: 0.5;
+    }
 	/* JSで管理していてmoduleCSSだとバグるので、、 */
     .leaf01 {
         background-image: url(/leaves/leaf_01.png); /* TODO */
@@ -203,7 +205,7 @@
 
         setTimeout(() => {
             leaf.remove();
-        }, 10000);
+        }, 12000);
     };
     const createLeaf03 = () => {
         let leaf = document.createElement("span");
@@ -222,7 +224,7 @@
 
         setTimeout(() => {
             leaf.remove();
-        }, 10000);
+        }, 14000);
     };
     const createLeaf04 = () => {
         let leaf = document.createElement("span");
@@ -241,7 +243,7 @@
 
         setTimeout(() => {
             leaf.remove();
-        }, 10000);
+        }, 16000);
     };
     const createLeaf05 = () => {
         let leaf = document.createElement("span");
@@ -260,7 +262,7 @@
 
         setTimeout(() => {
             leaf.remove();
-        }, 10000);
+        }, 18000);
     };
 
     setInterval(createLeaf01, 1000);
