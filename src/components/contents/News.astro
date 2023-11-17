@@ -1,7 +1,28 @@
 ---
 import SubTitle from "../../components/SubTitle.astro";
+import NewsItem from "../../components/NewsItem.astro";
+
 ---
 
 <div class="news">
-  <SubTitle title="お知らせ" />
+    <SubTitle title="お知らせ" />
+    <div class="news-container">
+        <div id="announcement-container">
+                <NewsItem/>
+        </div>
+    </div>
 </div>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.news-container {
+    width: 100%;
+    margin: 20px auto;
+    padding: 0;
+}
+</style>
