@@ -2,23 +2,24 @@
 import SubTitle from "../../components/SubTitle.astro";
 import DelayNewsItem from "../../components/DelayNewsItem.astro";
 
-const delayValues = [
-  {
-    name: "ソフトテニス",
-    updateAt: "12:30",
-    delay: "10",
-  },
-  {
-    name: "サッカー",
-    updateAt: "11:30",
-    delay: "10",
-  },
-  {
-    name: "野球",
-    updateAt: "12:00",
-    delay: "10",
-  },
-];
+const delayValues = [];
+
+fetch('https://sheets.googleapis.com/v4/spreadsheets/1CcYDhpQ0fVs-cLe5Atvh80xaY3PO5J-VyEvwsxxqpIg/values/%E9%81%85%E5%BB%B6%E6%83%85%E5%A0%B1?key=AIzaSyDle92oc8MZGEQaid_EyAwhAWGomGwSz08')
+  .then(response => response.json())
+  .then(data => {
+    let values = data.values;
+
+    for (let i = 1; i < values.length; i++) {
+      delayValues.push({
+        name: values[i][0],
+        updateAt: values[i][2],
+        delay: values[i][1],
+      });
+    }
+
+    console.log(delayValues);
+  })
+  .catch(error => console.error('Error fetching data:', error));
 ---
 
 <div class="delayNews">
@@ -31,9 +32,14 @@ const delayValues = [
         <div class="delay text-12">遅延時間</div>
       </div>
     </div>
-    {delayValues.map((delayValue, index) => (
+    {delayValues.length != 0 ? 
+    (
+    delayValues.map((delayValue, index) => (
       <DelayNewsItem name={delayValue.name} updateAt={delayValue.updateAt} delay={delayValue.delay} isLastContent={index == delayValues.length - 1} />
-    ))}
+    ))
+    ): (
+      <div>{delayValues.length}</div>
+    )}
   </div>
 </div>
 
@@ -65,35 +71,4 @@ const delayValues = [
 </style>
 
 <script>
-  let request = new XMLHttpRequest();
-
-  request.open('GET', 'https://sheets.googleapis.com/v4/spreadsheets/1JHpu-69XVPvqayDvuCzidMKfRDkBM58q3wqd4_ZHB5c/values/WEB%E5%87%BA%E5%8A%9B%E7%94%A8?key=AIzaSyBO6fk23Zw_Nv7x5Y-UaGc1p67DNXO8_so');
-  request.send();
-
-  request.onreadystatechange = () => {
-    if (request.readyState == 4 && request.status == 200) {
-        let requestData = JSON.parse(request.responseText)
-        let data = requestData.values
-        let tempHeader = '<tr class="sokuho-title"><th class="sokuho-rank">RANK</th><th class="sokuho-class">CLASS</th><th class="sokuho-point">POINT</th></tr>'
-
-        let rankValueBack = 0
-        for (let i = 0; i < data.length; i++) {
-            let rankValue = i + 1
-            if (i !== 0 && data[i-1][1] === data[i][1]) rankValue = rankValueBack
-
-            let rankClass = "point-same"
-            if (data[i][2] === "up") {
-                rankClass = "point-up"
-            }
-            else if (data[i][2] === "down") {
-                rankClass = "point-down"
-            }
-            let temp = `<tr><td class="sokuho-rank">${rankValue}<span class="${rankClass}">→</span></td><td class="sokuho-class">${data[i][0]}</td><td class="sokuho-point">${data[i][1]}pt</td></tr>`
-            tempHeader += temp
-
-            rankValueBack = rankValue
-        }
-        document.getElementById('sokuho-wrapper').innerHTML = tempHeader
-    }
-  }
 </script>
