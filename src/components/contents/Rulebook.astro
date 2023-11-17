@@ -5,6 +5,9 @@ import RuleModal from '../RuleModal.astro';
 ---
 
 <SubTitle title="ルールブック" />
+<button class="closeButton modalClose">
+    <Icon name="ion:close-circle" class="closeButtonIcon" />
+</button>
 <div class="rulebook">
     <div class="ruleItem">
         <button class="ruleButton">
@@ -186,7 +189,6 @@ import RuleModal from '../RuleModal.astro';
         overflow-y: auto;
         width: 90%;
         height: 90%;
-        z-index: 10;
     }
     .modalCover {
         position: absolute;
@@ -204,31 +206,62 @@ import RuleModal from '../RuleModal.astro';
     .modalOpen {
         display: flex;
     }
+    .closeButton {
+        height: 40px;
+        width: 40px;
+        color: var(--color-white);
+        border: none;
+        border-radius: 50%;
+        background-color: var(--color-primary-orange-100);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 20;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+    }
+    .closeButtonIcon {
+        width: 105%;
+        height: 105%;
+    }
+    .modalClose {
+        display: none;
+    }
 </style>
 
 <script>
-    const buttons = document.querySelectorAll('.ruleItem');
+    const openButtons = document.querySelectorAll('.ruleItem');
+    const closeButton = document.querySelector('.closeButton');
 
     // ボタンがクリックされたときに対応するモーダルを開くイベントリスナーを追加する。
-    buttons.forEach((button) => {
+    openButtons.forEach((button) => {
         button.addEventListener('click', () => onModalOpen(button));
     });
 
+    closeButton.addEventListener('click', () => onModalClose());
+
     function onModalOpen(clickedButton) {
-        // ボタンがクリックされたときに実行される関数
         var modalCover = clickedButton.querySelector('.modalCover');
 
-        // すべてのモーダルを非表示にする
         document.querySelectorAll('.modalCover').forEach((modal) => {
             modal.classList.remove('modalOpen');
         });
 
+        closeButton.classList.remove('modalClose');
         modalCover.classList.add('modalOpen');
 
         modalCover.addEventListener('click', () => {
-            // モーダルカバーがクリックされたときに実行される関数
             console.log('モーダルカバーがクリックされました。');
             modal.classList.remove('modalOpen');
+        });
+    }
+
+    function onModalClose() {
+        document.querySelectorAll('.modalCover').forEach((modal) => {
+            modal.classList.remove('modalOpen');
+        closeButton.classList.add('modalClose');
         });
     }
 </script>
