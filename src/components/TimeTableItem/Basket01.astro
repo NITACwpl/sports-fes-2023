@@ -8,66 +8,49 @@
             <p>体育館(前)</p>
         </div>
     </div>  
-    <div class="koiya">
-        <p>zenkoiya</p>
-    </div>
-    <div class="koiya">
-        <p>zenkoiya</p>
-    </div>
-    <div class="koiya">
-        <p>zenkoiya</p>
-    </div>    
-    <div class="battle-group" id="one">
+    <div class="koiya"></div>
+    <div class="koiya"></div>
+    <div class="koiya"></div> 
+    <div class="battle-group">
         <p>1M vs 1E</p>
     </div>
-    <div class="battle-group" id="two">
+    <div class="battle-group">
         <p>2M vs 2E</p>
     </div>
-    <div class="battle-group" id="three">
+    <div class="battle-group">
         <p>3M vs 3E</p>
     </div>
-    <div class="battle-group" id="four">
+    <div class="battle-group">
         <p>4M vs 4E</p>
     </div>
-    <div class="battle-group" id="five">
+    <div class="battle-group" >
         <p>5M vs 5E</p>
     </div>
-    <div class="koiya">
-        <p>zenkoiya</p>
-    </div>
-    <div class="koiya">
-        <p>zenkoiya</p>
-    </div>
-    <div class="koiya">
-        <p>zenkoiya</p>
-    </div>  
-    <div class="battle-group" id="six">
+    <div class="battle-group">
         <p>不 vs 不</p>
     </div>
-    <div class="battle-group" id="seven">
+    <div class="koiya"></div>
+    <div class="koiya"></div>
+    <div class="koiya"></div>
+    <div class="battle-group">
         <p>不 vs 不</p>
     </div>
-    <div class="battle-group" id="eight">
+    <div class="battle-group">
         <p>不 vs 不</p>
     </div>
-    <div class="koiya">
-        <p>zenkoiya</p>
+    <div class="battle-group">
+        <p>不 vs 不</p>
     </div>
-    <div class="battle-group" id="nine">
+    <div class="koiya"></div>
+    <div class="battle-group">
         <p>不 vs 専</p>
     </div>
-    <div class="koiya">
-        <p>zenkoiya</p>
-    </div>
-    <div class="battle-group" id="ten">
+    <div class="koiya"></div>
+    <div class="battle-group">
         <p>不 vs 不</p>
     </div>
-    <div class="koiya">
-        <p>zenkoiya</p>
-    </div>
-    <div class="battle-group" id="eleven">
-        <p>不 vs 不</p>
-    </div>
+    <div class="koiya"></div>
+    <div class="koiya"></div>
 </div>
 
 <style>
@@ -92,101 +75,23 @@
     .koiya {
         display: grid;
         grid-area: koiya;
-        border-radius:10%;
         grid-template-rows: 10px 1fr 10px;
         grid-template-columns: 50px 1fr;
-        border-radius: 15%;
-        font-size: 10px;
         margin: 2px;
-        text-align: center;
     }
     .battle-group {
-        display: grid;
+        width: 50px;
+        height: 20px;
         margin: 50px 0px;
-        grid-template-rows: 10px 1fr 10px;
-        grid-template-columns: 50px 1fr;
-        grid-template-areas:
-        ". . . one two three four five six . . . seven eight nine . ten . eleven";  
-        
-        border-radius: 15%;
+        border-radius: 5px;
         font-size: 10px;
         margin: 2px;
+        padding: 0px;
         text-align: center;
+        background: #FDD483;
     }
     .battle-group > *{
         width: 50px;
-        height: 10px;
-        border-radius: 15%;
-        font-size: 10px;
-        margin: 2px 0px;
-        text-align: center;
-        padding: px;
-    }
-
-    #one {
-        grid-area: one;
-        grid-row: 1;
-        grid-column: 4 / 21;
-        background: #FDD483;
-    }
-    #two {
-        grid-area: two;
-        grid-row: 1;
-        grid-column: 5 / 21;
-        background: #FDD483;
-    }
-    #three {
-        grid-area: three;
-        grid-row: 1;
-        grid-column: 6 / 21;
-        background: #FDD483;
-    }
-    #four {
-        grid-area: four;
-        grid-row: 1;
-        grid-column: 7 / 21;
-        background: #FDD483;
-    }
-    #five {
-        grid-area: five;
-        grid-row: 1;
-        grid-column: 8 / 21;
-        background: #FDD483;
-    }
-    #six {
-        grid-area: six;
-        grid-row: 1;
-        grid-column: 9 / 21;
-        background: #FDD483;
-    }
-    #seven {
-        grid-area: seven;
-        grid-row: 1;
-        grid-column: 13 / 21;
-        background: #FDD483;
-    }
-    #eight {
-        grid-area: eight;
-        grid-row: 1;
-        grid-column: 14 / 21;
-        background: #FDD483;
-    }
-    #nine {
-        grid-area: nine;
-        grid-row: 1;
-        grid-column: 15 / 21;
-        background: #FDD483;
-    }
-    #ten {
-        grid-area: ten;
-        grid-row: 1;
-        grid-column: 17 / 21;
-        background: #FDD483;
-    }
-    #eleven {
-        grid-area: eleven;
-        grid-row: 1;
-        grid-column: 19 / 21;
-        background: #FDD483;
+        margin: 2px  0px;
     }
 </style>

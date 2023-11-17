@@ -5,9 +5,12 @@
         </div>
         <div class="place">
             <img src="https://th.bing.com/th/id/OIP.hzOyTKYEVa5V2QgyMnd2pAHaKM?pid=ImgDet&rs=1" width=9px>
-            <p>グラウンド(１コース)</p>
+            <p>グラウンド(１コート)</p>
         </div>
     </div>  
+    <div class="koiya"></div>
+    <div class="koiya"></div>
+    <div class="koiya"></div>
     <div class="battle-group" id="one">
         <p>5C vs 5A</p>
     </div>
@@ -17,6 +20,9 @@
     <div class="battle-group" id="three">
         <p>4E vs 4C</p>
     </div>
+    <div class="koiya"></div>
+    <div class="koiya"></div>
+    <div class="koiya"></div>
     <div class="battle-group" id="four">
         <p>2E vs 2C</p>
     </div>
@@ -29,6 +35,7 @@
     <div class="battle-group" id="seven">
         <p>不 vs 不</p>
     </div>
+    <div class="koiya"></div>
 </div>
 
 <style>
@@ -50,63 +57,25 @@
         font-size: 10px;
         width: 100px;
     }
-    .battle-group {
+    .koiya {
         display: grid;
+        grid-area: koiya;
+        grid-template-rows: 10px 1fr 10px;
+        grid-template-columns: 50px 1fr;
+        margin: 2px;
+    }
+    .battle-group {
+        height: 20px;
         margin: 50px 0px;
-        grid-template-rows: 10px 11fr 10px;
-        grid-template-columns: 100px 1fr;
-        grid-template-areas:
-        ". . . one two three . . . four five six seven ";  
-        
-        border-radius: 15%;
+        border-radius: 5px;
         font-size: 10px;
         margin: 2px;
+        padding: 0px;
         text-align: center;
+        background: #FDD483;
     }
     .battle-group > *{
-        padding: 3px;
-    }
-
-    #one {
-        grid-area: one;
-        grid-row: 1;
-        grid-column: 4 / 21;
-        background: #FDD483;
-    }
-    #two {
-        grid-area: two;
-        grid-row: 1;
-        grid-column: 6 / 21;
-        background: #FDD483;
-    }
-    #three {
-        grid-area: three;
-        grid-row: 1;
-        grid-column: 8 / 21;
-        background: #FDD483;
-    }
-    #four {
-        grid-area: four;
-        grid-row: 1;
-        grid-column: 13 / 21;
-        background: #FDD483;
-    }
-    #five {
-        grid-area: five;
-        grid-row: 1;
-        grid-column: 15 / 21;
-        background: #FDD483;
-    }
-    #six {
-        grid-area: six;
-        grid-row: 1;
-        grid-column: 17 / 21;
-        background: #FDD483;
-    }
-    #seven {
-        grid-area: seven;
-        grid-row: 1;
-        grid-column: 19 / 21;
-        background: #FDD483;
+        width: 104px;
+        margin: 2px  0px;
     }
 </style>
