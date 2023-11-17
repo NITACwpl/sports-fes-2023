@@ -198,7 +198,7 @@ import RuleModal from '../RuleModal.astro';
         height: 100vh;
         justify-content: center;
         align-items: center;
-        z-index: 5;
+        z-index: 10;
         display: none;
     }
     .modalOpen {
@@ -224,5 +224,11 @@ import RuleModal from '../RuleModal.astro';
         });
 
         modalCover.classList.add('modalOpen');
+
+        modalCover.addEventListener('click', () => {
+            // モーダルカバーがクリックされたときに実行される関数
+            console.log('モーダルカバーがクリックされました。');
+            modal.classList.remove('modalOpen');
+        });
     }
 </script>
