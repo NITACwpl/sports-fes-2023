@@ -1,50 +1,124 @@
 ---
 import { Icon } from 'astro-iconify'
 import SubTitle from "../../components/SubTitle.astro";
+import RuleModal from '../RuleModal.astro';
 ---
 
 <SubTitle title="ルールブック" />
+<button class="closeButton modalClose">
+    <Icon name="ion:close-circle" class="closeButtonIcon" />
+</button>
 <div class="rulebook">
-    <a href="???" class="ruleItem">
-        <Icon name="fa6-solid:earth-africa" class="sportIcon" />
-        <p class="text-12 sportName">共通ルール</p>
-    </a>
-    <a href="???" class="ruleItem">
-        <Icon name="fa6-solid:basketball" class="sportIcon" />
-        <p class="text-12 sportName">バスケットボール</p>
-    </a>
-    <a href="???" class="ruleItem">
-        <Icon name="fa-solid:table-tennis" class="sportIcon" />
-        <p class="text-12 sportName">卓球</p>
-    </a>
-    <a href="???" class="ruleItem">
-        <Icon name="cil:tennis" class="sportIcon" />
-        <p class="text-12 sportName">硬式テニス</p>
-    </a>
-    <a href="???" class="ruleItem">
-        <Icon name="fa6-solid:baseball-bat-ball" class="sportIcon" />
-        <p class="text-12 sportName">ソフトボール</p>
-    </a>
-    <a href="???" class="ruleItem">
-        <Icon name="fluent:sport-soccer-24-filled" class="sportIcon" />
-        <p class="text-12 sportName">サッカー</p>
-    </a>
-    <a href="???" class="ruleItem">
-        <Icon name="icon-park-outline:badminton" class="sportIcon" />
-        <p class="text-12 sportName">バドミントン</p>
-    </a>
-    <a href="???" class="ruleItem">
-        <Icon name="game-icons:beach-ball" class="sportIcon" />
-        <p class="text-12 sportName">バレーボール</p>
-    </a>
-    <a href="???" class="ruleItem">
-        <Icon name="bx:run" class="sportIcon" />
-        <p class="text-12 sportName">リレー</p>
-    </a>
-    <a href="???" class="ruleItem">
-        <Icon name="game-icons:rope-coil" class="sportIcon" />
-        <p class="text-12 sportName">綱引き</p>
-    </a>
+    <div class="ruleItem">
+        <button class="ruleButton">
+            <Icon name="fa6-solid:earth-africa" class="sportIcon" />
+            <p class="text-12 sportName">共通ルール</p>
+        </button>
+        <div class="modalCover">
+            <div class="ruleModal">
+                <RuleModal name="all" />
+            </div>
+        </div>
+    </div>
+    <div class="ruleItem">
+        <button class="ruleButton">
+            <Icon name="fa6-solid:basketball" class="sportIcon" />
+            <p class="text-12 sportName">バスケットボール</p>
+        </button>
+        <div class="modalCover">
+            <div class="ruleModal">
+                <RuleModal name="basketball" />
+            </div>
+        </div>
+    </div>
+    <div class="ruleItem">
+        <button class="ruleButton">
+            <Icon name="fa-solid:table-tennis" class="sportIcon" />
+            <p class="text-12 sportName">卓球</p>
+        </button>
+        <div class="modalCover">
+            <div class="ruleModal">
+                <RuleModal name="tableTennis" />
+            </div>
+        </div>
+    </div>
+    <div class="ruleItem">
+        <button class="ruleButton">
+            <Icon name="cil:tennis" class="sportIcon" />
+            <p class="text-12 sportName">硬式テニス</p>
+        </button>
+        <div class="modalCover">
+            <div class="ruleModal">
+                <RuleModal name="tennis" />
+            </div>
+        </div>
+    </div>
+    <div class="ruleItem">
+        <button class="ruleButton">
+            <Icon name="fa6-solid:baseball-bat-ball" class="sportIcon" />
+            <p class="text-12 sportName">ソフトボール</p>
+        </button>
+        <div class="modalCover">
+            <div class="ruleModal">
+                <RuleModal name="softball" />
+            </div>
+        </div>
+    </div>
+    <div class="ruleItem">
+        <button class="ruleButton">
+            <Icon name="fluent:sport-soccer-24-filled" class="sportIcon" />
+            <p class="text-12 sportName">サッカー</p>
+        </button>
+        <div class="modalCover">
+            <div class="ruleModal">
+                <RuleModal name="soccer" />
+            </div>
+        </div>
+    </div>
+    <div class="ruleItem">
+        <button class="ruleButton">
+            <Icon name="icon-park-outline:badminton" class="sportIcon" />
+            <p class="text-12 sportName">バドミントン</p>
+        </button>
+        <div class="modalCover">
+            <div class="ruleModal">
+                <RuleModal name="badminton" />
+            </div>
+        </div>
+    </div>
+    <div class="ruleItem">
+        <button class="ruleButton">
+            <Icon name="game-icons:beach-ball" class="sportIcon" />
+            <p class="text-12 sportName">バレーボール</p>
+        </button>
+        <div class="modalCover">
+            <div class="ruleModal">
+                <RuleModal name="volleyball" />
+            </div>
+        </div>
+    </div>
+    <div class="ruleItem">
+        <button class="ruleButton">
+            <Icon name="bx:run" class="sportIcon" />
+            <p class="text-12 sportName">リレー</p>
+        </button>
+        <div class="modalCover">
+            <div class="ruleModal">
+                <RuleModal name="relay" />
+            </div>
+        </div>
+    </div>
+    <div class="ruleItem">
+        <button class="ruleButton">
+            <Icon name="game-icons:rope-coil" class="sportIcon" />
+            <p class="text-12 sportName">綱引き</p>
+        </button>
+        <div class="modalCover">
+            <div class="ruleModal">
+                <RuleModal name="rope" />
+            </div>
+        </div>
+    </div>
 </div>
 
 <style>
@@ -98,4 +172,96 @@ import SubTitle from "../../components/SubTitle.astro";
         text-decoration: none;
         background-color: var(--color-white);
     }
+    .ruleButton {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        border: none;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 6px;
+        text-decoration: none;
+    }
+    .ruleModal {
+        overflow-y: auto;
+        width: 90%;
+        height: 90%;
+    }
+    .modalCover {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100vw;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        display: none;
+    }
+    .modalOpen {
+        display: flex;
+    }
+    .closeButton {
+        height: 40px;
+        width: 40px;
+        color: var(--color-white);
+        border: none;
+        border-radius: 50%;
+        background-color: var(--color-primary-orange-100);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 20;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+    }
+    .closeButtonIcon {
+        width: 105%;
+        height: 105%;
+    }
+    .modalClose {
+        display: none;
+    }
 </style>
+
+<script>
+    const openButtons = document.querySelectorAll('.ruleItem');
+    const closeButton = document.querySelector('.closeButton');
+
+    // ボタンがクリックされたときに対応するモーダルを開くイベントリスナーを追加する。
+    openButtons.forEach((button) => {
+        button.addEventListener('click', () => onModalOpen(button));
+    });
+
+    closeButton.addEventListener('click', () => onModalClose());
+
+    function onModalOpen(clickedButton) {
+        var modalCover = clickedButton.querySelector('.modalCover');
+
+        document.querySelectorAll('.modalCover').forEach((modal) => {
+            modal.classList.remove('modalOpen');
+        });
+
+        closeButton.classList.remove('modalClose');
+        modalCover.classList.add('modalOpen');
+
+        modalCover.addEventListener('click', () => {
+            console.log('モーダルカバーがクリックされました。');
+            modal.classList.remove('modalOpen');
+        });
+    }
+
+    function onModalClose() {
+        document.querySelectorAll('.modalCover').forEach((modal) => {
+            modal.classList.remove('modalOpen');
+        closeButton.classList.add('modalClose');
+        });
+    }
+</script>
