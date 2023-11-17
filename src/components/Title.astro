@@ -1,13 +1,29 @@
-<header class="title">
-<h1 class="text-24">
-    スポーツ大会2023
-</h1>
-<img src="ion_search.svg">
-</header>
+
+---
+import { Icon } from "astro-iconify";
+---
+
+<div class="titleContainer">
+    <h1 class="text-24 title">スポーツ大会2023</h1>
+    <Icon name="ion:search" class="searchIcon" />
+</div>
 
 <style>
-    .title {
+    .titleContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1;
+        height: 60px;
+        padding: 10px 20px;
         background-color: var(--color-primary-orange-100);
+    }
+    .title {
+        color: var(--color-white);
+    }
+    .searchIcon {
+        width: 24px;
+        height: 24px;
         color: var(--color-white);
         display: flex;
         line-height: 34.75px;
