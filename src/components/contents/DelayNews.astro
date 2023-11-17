@@ -4,22 +4,25 @@ import DelayNewsItem from "../../components/DelayNewsItem.astro";
 
 const delayValues = [];
 
-fetch('https://sheets.googleapis.com/v4/spreadsheets/1CcYDhpQ0fVs-cLe5Atvh80xaY3PO5J-VyEvwsxxqpIg/values/%E9%81%85%E5%BB%B6%E6%83%85%E5%A0%B1?key=AIzaSyDle92oc8MZGEQaid_EyAwhAWGomGwSz08')
-  .then(response => response.json())
-  .then(data => {
-    let values = data.values;
+  var scriptUrl = 'https://script.google.com/macros/s/AKfycbx54LjQ1sxSesCf4-lPzP9biO-WK3g8pgRmGApAaMAVJJJsrr1o-cw9N8LjROJO--x8/exec';
 
-    for (let i = 1; i < values.length; i++) {
+  // fetchを使用してデータを取得
+  fetch(scriptUrl)
+    .then(response => response.json())
+    .then(data => {
+
+    for (let i = 1; i < data.length; i++) {
+      let nowTime = new Date(data[i][2]);
       delayValues.push({
-        name: values[i][0],
-        updateAt: values[i][2],
-        delay: values[i][1],
+        name: data[i][0],
+        updateAt: nowTime.getHours() + ":" + nowTime.getMinutes(),
+        delay: data[i][1],
       });
     }
+    console.log("やぁ", delayValues);
+    })
+    .catch(error => console.error('Error:', error));
 
-    console.log(delayValues);
-  })
-  .catch(error => console.error('Error fetching data:', error));
 ---
 
 <div class="delayNews">
