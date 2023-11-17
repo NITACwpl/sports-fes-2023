@@ -1,27 +1,9 @@
 ---
 import SubTitle from "../../components/SubTitle.astro";
 import DelayNewsItem from "../../components/DelayNewsItem.astro";
+import { fetchDelayNewsData } from "../../lib/fetchDelayNewsData";
 
-const delayValues = [];
-
-  var scriptUrl = 'https://script.google.com/macros/s/AKfycbx54LjQ1sxSesCf4-lPzP9biO-WK3g8pgRmGApAaMAVJJJsrr1o-cw9N8LjROJO--x8/exec';
-
-  // fetchを使用してデータを取得
-  fetch(scriptUrl)
-    .then(response => response.json())
-    .then(data => {
-
-    for (let i = 1; i < data.length; i++) {
-      let nowTime = new Date(data[i][2]);
-      delayValues.push({
-        name: data[i][0],
-        updateAt: nowTime.getHours() + ":" + nowTime.getMinutes(),
-        delay: data[i][1],
-      });
-    }
-    console.log(delayValues);
-    })
-    .catch(error => console.error('Error:', error));
+const response = await fetchDelayNewsData();
 
 ---
 
@@ -35,13 +17,13 @@ const delayValues = [];
         <div class="delay text-12">遅延時間</div>
       </div>
     </div>
-    {delayValues.length != 0 ? 
+    {response.length != 0 ? 
     (
-    delayValues.map((delayValue, index) => (
-      <DelayNewsItem name={delayValue.name} updateAt={delayValue.updateAt} delay={delayValue.delay} isLastContent={index == delayValues.length - 1} />
+    response.filter(delayValue => delayValue.delay !== 0).map((delayValue, index) => (
+      <DelayNewsItem name={delayValue.name} updateAt={delayValue.updateAt} delay={delayValue.delay} isLastContent={index == response.length - 1} />
     ))
     ): (
-      <div>{delayValues.length}</div>
+      <div>データがありません。</div>
     )}
   </div>
 </div>
