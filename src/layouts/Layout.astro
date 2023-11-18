@@ -38,8 +38,8 @@ const pageTitles = {
 					<div class="mainContainer">
 						<slot />
 					</div>
+					<Navbar pageName={title} />
 				</main>
-				<Navbar pageName={title} />
 			</div>
 		</FallAnimation>
 	</body>
@@ -106,7 +106,6 @@ const pageTitles = {
 		height: 100dvh;
 		display: flex;
 		justify-content: center;
-		position: relative;
 	}
 	.container {
 		width: 100%;
@@ -119,12 +118,14 @@ const pageTitles = {
 	main {
 		flex: 1;
 		overflow-y: auto;
-		padding: 0 10px 50px 10px;
 		background-color: var(--color-white);
 	}
 
 	.mainContainer {
 		display: flex;
 		flex-direction: column;
+		position: relative;
+		padding: 0 10px 50px 10px;
+		z-index: 1;
 	}
 </style>

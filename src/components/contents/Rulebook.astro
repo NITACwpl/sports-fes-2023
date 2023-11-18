@@ -191,12 +191,13 @@ import RuleModal from '../RuleModal.astro';
         height: 90%;
     }
     .modalCover {
-        position: absolute;
+        position: fixed;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
         background-color: rgba(0, 0, 0, 0.5);
         width: 100vw;
+        max-width: 800px;
         height: 100vh;
         justify-content: center;
         align-items: center;
@@ -215,7 +216,8 @@ import RuleModal from '../RuleModal.astro';
         background-color: var(--color-primary-orange-100);
         position: fixed;
         top: 0;
-        left: 0;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 20;
         display: flex;
         justify-content: center;
