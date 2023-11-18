@@ -44,8 +44,28 @@ import RopeRelayD2 from "../TimeTableItem/RopeRelayD2.astro";
     </div>
     <div class="scroll">
       <div class="scrollTitle">
-        <p class="num-12">09:00</p>
-        <p class="num-12">09:20</p>
+        <p class="num-12 timeItem">09:00</p>
+        <p class="num-12 timeItem">09:20</p>
+        <p class="num-12 timeItem">09:40</p>
+        <p class="num-12 timeItem">10:00</p>
+        <p class="num-12 timeItem">10:20</p>
+        <p class="num-12 timeItem">10:40</p>
+        <p class="num-12 timeItem">11:00</p>
+        <p class="num-12 timeItem">11:20</p>
+        <p class="num-12 timeItem">11:40</p>
+        <p class="num-12 timeItem">12:00</p>
+        <p class="num-12 timeItem">12:20</p>
+        <p class="num-12 timeItem">12:40</p>
+        <p class="num-12 timeItem">13:00</p>
+        <p class="num-12 timeItem">13:20</p>
+        <p class="num-12 timeItem">13:40</p>
+        <p class="num-12 timeItem">14:00</p>
+        <p class="num-12 timeItem">14:20</p>
+        <p class="num-12 timeItem">14:40</p>
+        <p class="num-12 timeItem">15:00</p>
+        <p class="num-12 timeItem">15:20</p>
+        <p class="num-12 timeItem">15:40</p>
+        <p class="num-12 timeItem">16:00</p>
       </div>
       <div class="scrollItems">
         <BasketD1F />
@@ -111,22 +131,28 @@ import RopeRelayD2 from "../TimeTableItem/RopeRelayD2.astro";
     color: var(--color-primary-orange-100);
   }
   .scroll {
-    width: 2020px;
+    width: 1950px;
     border-radius: 0 4px 4px 0;
     margin-left: 60px;
   }
   .scrollTitle {
-    width: 2020px;
     height: 30px;
+    width: 1950px;
     background-color: var(--color-primary-orange-200);
     color: var(--color-white);
     display: flex;
     align-items: center;
-    justify-content: left;
-    padding-left: 150px;
+    justify-content: end;
     border-radius: 0 4px 0 0;
+    column-gap: 4px;
+  }
+  .timeItem {
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .scrollItems {
-    width: 2020px;
+    width: 1950px;
   }
 </style>

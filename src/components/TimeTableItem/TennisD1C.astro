@@ -27,7 +27,7 @@ import BattleGroup from "../BattleGroup.astro";
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        width: 100%;
+        width: 1910px;
         height: 60px;
     }
     .kyogi {
@@ -35,8 +35,7 @@ import BattleGroup from "../BattleGroup.astro";
         flex-direction: column;
         justify-content: center;
         padding: 5px;
-        column-gap: 5px;
-        align-items: left;
+        row-gap: 5px;
         width: 150px;
     }
     .place {
@@ -44,6 +43,10 @@ import BattleGroup from "../BattleGroup.astro";
         flex-direction: row;
         align-items: center;
         justify-content: left;
+        width: 100%;
+    }
+    .name {
+        width: 100%;
     }
     .placeIcon {
         width: 16px;
@@ -51,10 +54,11 @@ import BattleGroup from "../BattleGroup.astro";
         color: red;
     }
     .table {
-        flex: 1; 
         height: 100%;
+        width: 1768px;
         align-items: center;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /* 21 */
+        gap: 4px;
+        grid-template-columns: 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px; /* 21 */
     }
 </style>
