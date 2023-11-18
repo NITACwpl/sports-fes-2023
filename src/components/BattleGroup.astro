@@ -20,7 +20,7 @@ const { type, startId, endId, kou, otsu } = Astro.props;
         case 'battle':
             return (
                 <div class={`battle-group battle ${startId} ${endId}`}>
-                    <p class="text-16">{kou === "0" ? "未" : kou} vs {otsu === "0" ? "未" : kou}</p>
+                    <p class="text-16">{kou === "0" ? "未" : kou} vs {otsu === "0" ? "未" : otsu}</p>
                 </div>
             );
         case 'all':
@@ -32,7 +32,7 @@ const { type, startId, endId, kou, otsu } = Astro.props;
         default:
             return (
             <div class={`battle-group battle ${startId} ${endId}`}>
-                    <p class="text-16">{kou === "0" ? "未" : kou} vs {otsu === "0" ? "未" : kou}</p>
+                    <p class="text-16">{kou === "0" ? "未" : kou} vs {otsu === "0" ? "未" : otsu}</p>
                 </div>
             );
     }
