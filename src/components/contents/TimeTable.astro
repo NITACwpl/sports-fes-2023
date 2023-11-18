@@ -131,23 +131,21 @@ import RopeRelayD2 from "../TimeTableItem/RopeRelayD2.astro";
 </div>
 
 <style>
-  .timeTable {
-    position: relative;
-  }
   .table {
+    height: 300px;
     width: 100%;
     display: flex;
     border-radius: 4px;
-    overflow-x: scroll;
+    overflow: scroll;
   }
   .fixed {
+    height: 100%;
     width: 60px;
     border-radius: 4px 0 0 4px;
-    position: absolute;
   }
   .fixedTitle {
     height: 30px;
-    width: 100%;
+    width: 60px;
     background-color: var(--color-primary-orange-200);
     color: var(--color-white);
     display: flex;
@@ -174,7 +172,6 @@ import RopeRelayD2 from "../TimeTableItem/RopeRelayD2.astro";
   .scroll {
     width: 1950px;
     border-radius: 0 4px 4px 0;
-    margin-left: 60px;
   }
   .scrollTitle {
     height: 30px;
