@@ -1,7 +1,59 @@
 ---
 import SubTitle from "../../components/SubTitle.astro";
+import DelayNewsItem from "../../components/DelayNewsItem.astro";
+import { fetchDelayNewsData } from "../../lib/fetchDelayNewsData";
+
+const response = await fetchDelayNewsData();
+
 ---
 
 <div class="delayNews">
-  <SubTitle title="遅延情報" subTitle="５分前行動厳守！"/>
+  <SubTitle title="遅延情報" subTitle="目安程度に。５分前行動厳守！"/>
+  <div class="table">
+    <div class="tableTitle">
+      <div class="name text-12">遅延種目</div>
+      <div class="delayValueTitle">
+        <div class="updateAt text-10">更新時刻</div>
+        <div class="delay text-12">遅延時間</div>
+      </div>
+    </div>
+    {response.length != 0 ? 
+    (
+    response.filter(delayValue => delayValue.delay !== 0).map((delayValue, index) => (
+      <DelayNewsItem name={delayValue.name} updateAt={delayValue.updateAt} delay={delayValue.delay} isLastContent={index == response.length - 1} />
+    ))
+    ): (
+      <div>データがありません。</div>
+    )}
+  </div>
 </div>
+
+<style>
+  .table {
+    width: 100%;
+    border-radius: 4px;
+    border-spacing: 0;
+  }
+  .tableTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: var(--color-primary-orange-200);
+    border-radius: 4px 4px 0 0;
+    color: var(--color-white);
+  }
+  .name {
+    flex: 1;
+  }
+  .delayValueTitle {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+  }
+</style>
+
+<script>
+</script>

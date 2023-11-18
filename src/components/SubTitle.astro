@@ -1,10 +1,36 @@
 ---
+import { Icon } from "astro-iconify"
+
 interface Props {
 	title: string;
     subTitle?: string;
+    sportIcon?: string;
 }
 
-const { title, subTitle } = Astro.props;
+const { title, subTitle, sportIcon } = Astro.props;
 ---
-<h2 class="subTitle">{title}</h2>
-{subTitle && <h3 class="subTitle">{subTitle}</h3>}
+<div class="titleContainer">
+    <!-- {sportIcon && <Icon name={sportIcon} class="sportIcon" />} -->
+    <h2 class="title text-20">{title}</h2>
+    {subTitle && <h3 class="subTitle text-12">～{subTitle}～</h3>}
+</div>
+
+<style>
+    .titleContainer {
+        display: flex;
+        justify-content: start;
+        column-gap: 15px;
+        margin-top: 12px;
+        margin-bottom: 8px;
+    }
+    .sportIcon {
+        width: 24px;
+        height: 24px;
+        color: var(--color-primary-orange-100);
+    }
+    .subTitle {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+</style>
