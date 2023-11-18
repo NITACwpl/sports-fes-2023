@@ -1,0 +1,187 @@
+---
+interface Props {
+    type: 'lunch' | 'battle' | 'all';
+    startId: string;
+    endId: string;
+    kou?: string;
+    otsu?: string;
+}
+
+const { type, startId, endId, kou, otsu } = Astro.props;
+---
+{(() => {
+    switch (type) {
+        case 'lunch':
+            return (
+                <div class={`battle-group lunch ${startId} ${endId}`}>
+                    <p class="text-16">昼休憩</p>
+                </div>
+            );
+        case 'battle':
+            return (
+                <div class={`battle-group battle ${startId} ${endId}`}>
+                    <p class="text-16">{kou} vs {otsu}</p>
+                </div>
+            );
+        case 'all':
+            return (
+                <div class={`battle-group battle ${startId} ${endId}`}>
+                    <p class="text-16">綱引き・リレー</p>
+                </div>
+            );
+        default:
+            return (
+            <div class={`battle-group battle ${startId} ${endId}`}>
+                    <p class="text-16">{kou} vs {otsu}</p>
+                </div>
+            );
+    }
+})()}
+
+<style>
+    .battle-group {
+        height: 30px;
+        border-radius: 4px;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 2px;
+    }
+    .nothing {
+        background-color: var(--color-primary-orange-300);
+    }
+    .lunch {
+        background-color: var(--color-primary-orange-300);
+    }
+    .battle {
+        background-color: var(--color-primary-orange-300);
+    }
+    .start0900 {
+        grid-column-start: 1;
+    }
+    .start0920 {
+        grid-column-start: 2;
+    }
+    .start0940 {
+        grid-column-start: 3;
+    }
+    .start1000 {
+        grid-column-start: 4;
+    }
+    .start1020 {
+        grid-column-start: 5;
+    }
+    .start1040 {
+        grid-column-start: 6;
+    }
+    .start1100 {
+        grid-column-start: 7;
+    }
+    .start1120 {
+        grid-column-start: 8;
+    }
+    .start1140 {
+        grid-column-start: 9;
+    }
+    .start1200 {
+        grid-column-start: 10;
+    }
+    .start1220 {
+        grid-column-start: 11;
+    }
+    .start1240 {
+        grid-column-start: 12;
+    }
+    .start1300 {
+        grid-column-start: 13;
+    }
+    .start1320 {
+        grid-column-start: 14;
+    }
+    .start1340 {
+        grid-column-start: 15;
+    }
+    .start1400 {
+        grid-column-start: 16;
+    }
+    .start1420 {
+        grid-column-start: 17;
+    }
+    .start1440 {
+        grid-column-start: 18;
+    }
+    .start1500 {
+        grid-column-start: 19;
+    }
+    .start1520 {
+        grid-column-start: 20;
+    }
+    .start1540 {
+        grid-column-start: 21;
+    }
+
+    .end0920 {
+        grid-column-end: 2;
+    }
+    .end0940 {
+        grid-column-end: 3;
+    }
+    .end1000 {
+        grid-column-end: 4;
+    }
+    .end1020 {
+        grid-column-end: 5;
+    }
+    .end1040 {
+        grid-column-end: 6;
+    }
+    .end1100 {
+        grid-column-end: 7;
+    }
+    .end1120 {
+        grid-column-end: 8;
+    }
+    .end1140 {
+        grid-column-end: 9;
+    }
+    .end1200 {
+        grid-column-end: 10;
+    }
+    .end1220 {
+        grid-column-end: 11;
+    }
+    .end1240 {
+        grid-column-end: 12;
+    }
+    .end1300 {
+        grid-column-end: 13;
+    }
+    .end1320 {
+        grid-column-end: 14;
+    }
+    .end1340 {
+        grid-column-end: 15;
+    }
+    .end1400 {
+        grid-column-end: 16;
+    }
+    .end1420 {
+        grid-column-end: 17;
+    }
+    .end1440 {
+        grid-column-end: 18;
+    }
+    .end1500 {
+        grid-column-end: 19;
+    }
+    .end1520 {
+        grid-column-end: 20;
+    }
+    .end1540 {
+        grid-column-end: 21;
+    }
+    .end1600 {
+        grid-column-end: 22;
+    }
+</style>
