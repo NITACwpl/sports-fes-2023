@@ -8,15 +8,16 @@ import SubTitle from "../../components/SubTitle.astro";
   
     <span>
       <div class="se">
-       <h2 class="title text-20">Twitter</h2>
-       <h3 class="subTitle text-12">～忘れ物など~</h3>
+       <SubTitle title="Twitter" subTitle="忘れ物情報など" /> 
+       
       </div>
     </span>
 
-   
-    <a class="twitter-timeline" href="https://twitter.com/NitacGakuseikai?ref_src=twsrc%5Etfw">Tweets by NitacGakuseikai</a>
-     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
-    </script>
+    <div class="test">
+      <a class="twitter-timeline" data-height="300" href="https://twitter.com/NitacGakuseikai?ref_src=twsrc%5Etfw">Tweets by NitacGakuseikai</a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
+     </script>
+    </div>
   </div>
 
 <style>
@@ -31,7 +32,7 @@ import SubTitle from "../../components/SubTitle.astro";
 .test{
   width:100%;
   position:relative;
-  
+
 }
   .se{
     display: flex;
@@ -43,7 +44,7 @@ import SubTitle from "../../components/SubTitle.astro";
     vertical-align:baseline;
   }
 
-  h3{
-    padding-left:10px;
-  }
+ 
+
+
 </style>
