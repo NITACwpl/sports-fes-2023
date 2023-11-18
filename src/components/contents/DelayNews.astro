@@ -3,9 +3,7 @@ import SubTitle from "../../components/SubTitle.astro";
 import DelayNewsItem from "../../components/DelayNewsItem.astro";
 import { fetchDelayNewsData } from "../../lib/fetchDelayNewsData";
 
-let response = 10;
-response = await fetchDelayNewsData();
-
+const response = await fetchDelayNewsData();
 
 ---
 
@@ -25,7 +23,7 @@ response = await fetchDelayNewsData();
         <DelayNewsItem name={delayValue.name} updateAt={delayValue.updateAt} delay={delayValue.delay} isLastContent={index == response.length - 1} />
       ))
     ) : (
-      response === 10 ? (
+      response ? (
         <div class="text-12 text-center">遅延情報はありません。</div>
       ) : (
         <div class="text-12 text-center">遅延情報を取得できませんでした。</div>
