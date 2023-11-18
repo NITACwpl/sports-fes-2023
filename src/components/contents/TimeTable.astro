@@ -138,8 +138,34 @@ import RopeRelayD2 from "../TimeTableItem/RopeRelayD2.astro";
     border-radius: 4px;
     overflow: scroll;
   }
+
+  .fixedIcons{
+    position: sticky;
+    left: 0;
+    z-index: 1;
+  }
+
+  .scrollTitle {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
   .fixed {
-    height: 100%;
+    position: sticky;
+    left: 0;
+    z-index: 2;
+  }
+
+  .fixedTitle {
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 3;
+  }
+
+  .fixed {
+    height: fit-content;
     width: 60px;
     border-radius: 4px 0 0 4px;
   }
@@ -172,6 +198,7 @@ import RopeRelayD2 from "../TimeTableItem/RopeRelayD2.astro";
   .scroll {
     width: 1950px;
     border-radius: 0 4px 4px 0;
+    height: fit-content;
   }
   .scrollTitle {
     height: 30px;
