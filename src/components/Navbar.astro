@@ -54,7 +54,7 @@ const { pageName } = Astro.props;
 		position: fixed;
 		max-width: 800px;
 		width: 100%;
-		height: 40px;
+		height: 50px;
 		bottom: 0px;
 		z-index: 9;
 	}
@@ -92,7 +92,7 @@ const { pageName } = Astro.props;
 		color: var(--color-white);
 	}
 	.menu{
-		transform: translateY(100vh);
+		transform: translateY(100dvh);
 		transition: all .3s linear;
 		z-index: 9;
 		max-width: 800px;
@@ -118,7 +118,7 @@ const { pageName } = Astro.props;
 	.menu.is-active{
 		z-index: 9;
 		position: fixed;
-		transform: translateY(-95vh);
+		transform: translateY(calc(-100dvh + 40px));
 	}
 	.openbtn.is-active{
 		display: flex;
