@@ -121,7 +121,7 @@
 
 <style is:global>
     :root {
-        --opacity-leaves: 0.5;
+        --opacity-leaves: 1;
     }
 	/* JSで管理していてmoduleCSSだとバグるので、、 */
     .leaf01 {
@@ -130,7 +130,7 @@
         background-position: center;
         position: absolute;
         animation: fall01 10s linear;
-		z-index: 0;
+		z-index: -1;
     }
     .leaf02 {
         background-image: url( /leaves/leaf_02.png); /* TODO */
@@ -138,7 +138,7 @@
         background-position: center;
         position: absolute;
         animation: fall02 12s linear;
-		z-index: 0;
+		z-index: -1;
     }
     .leaf03 {
         background-image: url(/leaves/leaf_03.png); /* TODO */
@@ -146,7 +146,7 @@
         background-position: center;
         position: absolute;
         animation: fall01 14s linear;
-		z-index: 0;
+		z-index: -1;
     }
     .leaf04 {
         background-image: url(/leaves/leaf_04.png); /* TODO */
@@ -154,7 +154,7 @@
         background-position: center;
         position: absolute;
         animation: fall02 16s linear;
-		z-index: 0;
+		z-index: -1;
     }
     .leaf05 {
         background-image: url(/leaves/leaf_05.png); /* TODO */
@@ -162,7 +162,7 @@
         background-position: center;
         position: absolute;
         animation: fall01 18s linear;
-		z-index: 0;
+		z-index: -1;
     }
 </style>
 

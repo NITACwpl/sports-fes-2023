@@ -17,13 +17,17 @@ const response = await fetchDelayNewsData();
         <div class="delay text-12">遅延時間</div>
       </div>
     </div>
-    {response.length != 0 ? 
+    {response.length !== 0 ? 
     (
-    response.filter(delayValue => delayValue.delay !== 0).map((delayValue, index) => (
-      <DelayNewsItem name={delayValue.name} updateAt={delayValue.updateAt} delay={delayValue.delay} isLastContent={index == response.length - 1} />
-    ))
-    ): (
-      <div>データがありません。</div>
+      response.filter(delayValue => delayValue.delay !== 0).map((delayValue, index) => (
+        <DelayNewsItem name={delayValue.name} updateAt={delayValue.updateAt} delay={delayValue.delay} isLastContent={index == response.length - 1} />
+      ))
+    ) : (
+      response ? (
+        <div class="text-12 text-center">遅延情報はありません。</div>
+      ) : (
+        <div class="text-12 text-center">遅延情報を取得できませんでした。</div>
+      )
     )}
   </div>
 </div>
