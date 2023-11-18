@@ -1,6 +1,6 @@
 const delayValues = [];
 export function fetchDelayNewsData() {
-    var scriptUrl = 'https://script.google.com/macros/s/AKfycbx54LjQ1sxSesCf4-lPzP9biO-WK3g8pgRmGApAaMAVJJJsrr1o-cw9N8LjROJO--x8/exec';
+    var scriptUrl = import.meta.env.PUBLIC_GOOGLE_API_KEY;
     // fetchを使用してデータを取得
     const newDelayValues = [];
     fetch(scriptUrl)
@@ -18,6 +18,6 @@ export function fetchDelayNewsData() {
       delayValues.splice(0, delayValues.length, ...newDelayValues)
       })
       .catch(error => console.error('Error:', error));
-
+      console.log(delayValues);
     return delayValues;
 }
