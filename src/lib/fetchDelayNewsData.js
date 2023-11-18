@@ -16,7 +16,6 @@ export function fetchDelayNewsData() {
         });
       }
       delayValues.splice(0, delayValues.length, ...newDelayValues)
-      console.log(delayValues);
       })
       .catch(error => console.error('Error:', error));
 
