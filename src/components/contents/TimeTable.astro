@@ -1,38 +1,132 @@
 ---
-import SubTitle from "../../components/SubTitle.astro";
-import TimeTableItem from "../../components/TimeTableItem.astro";
-import Basket01 from "../timeTableItem/Basket01.astro"
-import Basket02 from "../timeTableItem/Basket02.astro"
-import Soft01 from "../timeTableItem/Soft01.astro"
-import Soft02 from "../timeTableItem/Soft02.astro"
-import Soft03 from "../timeTableItem/Soft03.astro"
-import Soft04 from "../timeTableItem/Soft04.astro"
-import Soccer01 from "../timeTableItem/Soccer01.astro"
-import Soccer02 from "../timeTableItem/Soccer02.astro"
-import TableTennis01 from "../timeTableItem/TableTennis01.astro"
-import TableTennis02 from "../timeTableItem/TableTennis02.astro"
-import Tennis01 from "../timeTableItem/Tennis01.astro"
-import Tennis02 from "../timeTableItem/Tennis02.astro"
-import Tennis03 from "../timeTableItem/Tennis03.astro"
-import Badminton from "../timeTableItem/Badminton.astro"
-import Valley from "../timeTableItem/Valley.astro"
+import { Icon } from "astro-iconify";
+
+import SubTitle from "../SubTitle.astro";
+import BasketD1F from "../TimeTableItem/BasketD1F.astro";
+import BasketD1B from "../TimeTableItem/BasketD1B.astro";
+import SoftD101 from "../TimeTableItem/SoftD101.astro";
+import SoftD102 from "../TimeTableItem/SoftD102.astro";
+import SoccerD1 from "../TimeTableItem/SoccerD1.astro";
+import TableTennisD1A from "../TimeTableItem/TableTennisD1A.astro";
+import TableTennisD1B from "../TimeTableItem/TableTennisD1B.astro";
+import TennisD1F from "../TimeTableItem/TennisD1F.astro";
+import TennisD1C from "../TimeTableItem/TennisD1C.astro";
+import TennisD1B from "../TimeTableItem/TennisD1B.astro";
+import BadmintonD2 from "../TimeTableItem/BadmintonD2.astro";
+import ValleyD2 from "../TimeTableItem/ValleyD2.astro";
+import SoftD201 from "../TimeTableItem/SoftD201.astro";
+import SoftD202 from "../TimeTableItem/SoftD202.astro";
+import SoccerD2 from "../TimeTableItem/SoccerD2.astro";
+import RopeRelayD2 from "../TimeTableItem/RopeRelayD2.astro";
 ---
 
 <div class="timeTable">
   <SubTitle title="タイムテーブル" />
+  <div class="table">
+    <div class="fixed">
+      <div class="fixedTitle">
+        <p class="text-12">競技</p>
+      </div>
+      <div class="fixedIcons">
+        <div class="fixedIconHolder">
+          <Icon name="ion:trophy" class="fixedIcon" />
+        </div>
+        <div class="fixedIconHolder">
+          <Icon name="ion:trophy" class="fixedIcon" />
+        </div>
+        <div class="fixedIconHolder">
+          <Icon name="ion:trophy" class="fixedIcon" />
+        </div>
+        <div class="fixedIconHolder">
+          <Icon name="ion:trophy" class="fixedIcon" />
+        </div>
+      </div>
+    </div>
+    <div class="scroll">
+      <div class="scrollTitle">
+        <p class="num-12">09:00</p>
+        <p class="num-12">09:20</p>
+      </div>
+      <div class="scrollItems">
+        <BasketD1F />
+        <BasketD1B />
+        <SoftD101 />
+        <SoftD102 />
+        <!-- <SoccerD1 />
+        <TableTennisD1A />
+        <TableTennisD1B />
+        <TennisD1F />
+        <TennisD1C />
+        <TennisD1B />
+        <BadmintonD2 />
+        <ValleyD2 />
+        <SoftD201 />
+        <SoftD202 />
+        <SoccerD2 />
+        <RopeRelayD2 /> -->
+      </div>
+    </div>
+  </div>
 </div>
-<Basket01 />
-<Basket02 />
-<Soft01 />
-<Soft02 />
-<Soccer01 />
-<TableTennis01 />
-<TableTennis02 />
-<Tennis01 />
-<Tennis02 />
-<Tennis03 />
-<Badminton />      <!-- 二日目 -->
-<Valley />         <!-- 二日目 -->
-<Soft03 />         <!-- 二日目 -->
-<Soft04 />         <!-- 二日目 -->
-<Soccer02 />       <!-- 二日目 -->
+
+<style>
+  .timeTable {
+    position: relative;
+  }
+  .table {
+    width: 100%;
+    display: flex;
+    border-radius: 4px;
+    overflow-x: scroll;
+  }
+  .fixed {
+    width: 60px;
+    border-radius: 4px 0 0 4px;
+    position: absolute;
+  }
+  .fixedTitle {
+    height: 30px;
+    width: 100%;
+    background-color: var(--color-primary-orange-200);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px 0 0 0;
+  }
+  .fixedIcons {
+    width: 100%;
+    background-color: var(--color-white);
+  }
+  .fixedIconHolder {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .fixedIcon {
+    width: 28px;
+    height: 28px;
+    color: var(--color-primary-orange-100);
+  }
+  .scroll {
+    width: 2020px;
+    border-radius: 0 4px 4px 0;
+    margin-left: 60px;
+  }
+  .scrollTitle {
+    width: 2020px;
+    height: 30px;
+    background-color: var(--color-primary-orange-200);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: 150px;
+    border-radius: 0 4px 0 0;
+  }
+  .scrollItems {
+    width: 2020px;
+  }
+</style>

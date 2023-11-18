@@ -2,6 +2,7 @@
 import '@fontsource/roboto-condensed';
 import '@fontsource/zen-kaku-gothic-antique';
 
+import FallAnimation from '../components/FallAnimation.astro';
 import Title from '../components/Title.astro';
 import Navbar from '../components/Navbar.astro';
 interface Props {
@@ -30,13 +31,17 @@ const pageTitles = {
 		<title>{pageTitles[title]}</title>
 	</head>
 	<body>
-		<div class="container">
-			<Title />
-			<main>
-				<slot />
-			</main>
-			<Navbar pageName={title} />
-		</div>
+		<FallAnimation>
+			<div class="container">
+				<Title />
+				<main>
+					<div class="mainContainer">
+						<slot />
+					</div>
+				</main>
+				<Navbar pageName={title} />
+			</div>
+		</FallAnimation>
 	</body>
 </html>
 <style is:global>
@@ -96,6 +101,7 @@ const pageTitles = {
 		height: 100dvh;
 		display: flex;
 		justify-content: center;
+		position: relative;
 	}
 	.container {
 		width: 100%;
@@ -106,11 +112,15 @@ const pageTitles = {
 		justify-content: space-between;
 	}
 	main {
-		display: flex;
-		flex-direction: column;
 		flex: 1;
 		overflow-y: auto;
 		padding: 0 10px;
 		background-color: var(--color-white);
+	}
+
+	.mainContainer {
+		display: flex;
+		flex-direction: column;
+		z-index: 1;
 	}
 </style>

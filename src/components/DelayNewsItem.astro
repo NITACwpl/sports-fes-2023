@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon';
+import { Icon } from 'astro-iconify';
 
 interface Props {
 	name: string;
@@ -53,6 +53,10 @@ const { name, updateAt, delay, isLastContent } = Astro.props;
         display: flex;
         align-items: center;
         column-gap: 20px;
+    }
+    .delay {
+        width: 40px;
+        text-align: right;
     }
     .delayTime {
         color: var(--color-primary-orange-100);

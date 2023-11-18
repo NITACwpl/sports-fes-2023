@@ -1,24 +1,10 @@
 ---
 import SubTitle from "../../components/SubTitle.astro";
 import DelayNewsItem from "../../components/DelayNewsItem.astro";
+import { fetchDelayNewsData } from "../../lib/fetchDelayNewsData";
 
-const delayValues = [
-  {
-    name: "ソフトテニス",
-    updateAt: "12:30",
-    delay: "10",
-  },
-  {
-    name: "サッカー",
-    updateAt: "11:30",
-    delay: "10",
-  },
-  {
-    name: "野球",
-    updateAt: "12:00",
-    delay: "10",
-  },
-];
+const response = await fetchDelayNewsData();
+
 ---
 
 <div class="delayNews">
@@ -31,9 +17,14 @@ const delayValues = [
         <div class="delay text-12">遅延時間</div>
       </div>
     </div>
-    {delayValues.map((delayValue, index) => (
-      <DelayNewsItem name={delayValue.name} updateAt={delayValue.updateAt} delay={delayValue.delay} isLastContent={index == delayValues.length - 1} />
-    ))}
+    {response.length != 0 ? 
+    (
+    response.filter(delayValue => delayValue.delay !== 0).map((delayValue, index) => (
+      <DelayNewsItem name={delayValue.name} updateAt={delayValue.updateAt} delay={delayValue.delay} isLastContent={index == response.length - 1} />
+    ))
+    ): (
+      <div>データがありません。</div>
+    )}
   </div>
 </div>
 
@@ -63,3 +54,6 @@ const delayValues = [
     column-gap: 10px;
   }
 </style>
+
+<script>
+</script>
