@@ -28,6 +28,9 @@ const { pageName } = Astro.props;
 			<li><a class="text-20" href="">会場マップ</a></li>
 			<li><a class="text-20" href="">試合結果</a></li>
 		</ul>
+		<div class="videowrap">
+			<video autoplay muted src="public/menuanime.mp4"></video>
+		</div>
 		<ul class="barbottom">
 			<li>©WEB製作研究部</li>
 		</ul>
@@ -103,6 +106,8 @@ const { pageName } = Astro.props;
 	}
 	.menulink{
 		padding-left: 30px;
+		position: relative;
+		z-index: 1;
 	}
 	.menulink li{
 		padding-top: 15px;
@@ -113,6 +118,19 @@ const { pageName } = Astro.props;
 	}
 	.menutwitter{
 		padding-bottom: 15px;
+	}
+	.videowrap{
+		/* text-align: center; */
+		position: absolute;
+		left: 5%;
+		bottom: 90px;
+		z-index: 0;
+		width: 90%;
+		border-bottom: solid 1px #444;
+	}
+	video{
+		display: block;/*videoタグの下に親要素との隙間ができるのを解消*/
+		width: 100%;
 	}
 	/* アニメーション後のメニューの状態 */
 	.menu.is-active{
