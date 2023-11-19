@@ -11,9 +11,17 @@ export async function fetchDelayNewsData() {
     const data = jsonData[1];
     for (let i = 0; i < data.length; i++) {
       let nowTime = new Date(data[i][2]);
+      const jpDateTimeFormat = new Intl.DateTimeFormat('ja-JP', {
+        timeZone: 'Asia/Tokyo',
+        hour12: false,
+        hour: '2-digit',
+        minute: '2-digit',
+      });
+
       newDelayValues.push({
         name: data[i][0],
-        updateAt: nowTime.getHours() + ":" + nowTime.getMinutes(),
+        // 日本時間でフォーマットした時刻を取得（時:分）
+        updateAt: jpDateTimeFormat.format(nowTime),
         delay: data[i][1],
       });
     }
