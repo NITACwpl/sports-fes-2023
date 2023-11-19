@@ -2,20 +2,20 @@
 import { Icon } from 'astro-iconify';
 
 interface Props {
-	pageName: string;
+ pageName: string;
 }
 
 const { pageName } = Astro.props;
 
 ---
 <div class="menuprohibitscroll">
-	<nav class="subete">
-		<ul>
-			<li><a href="/"><Icon name={pageName==="index" ? "ion:home" : "ion:home-outline"} class="navIcon" /></a></li>
-			<li><a href="/results"><Icon name={pageName==="results" ? "ion:trophy" : "ion:trophy-outline"} class="navIcon" /></a></li>
-			<li><a href="/map"><Icon name={pageName==="map" ? "ion:map" : "ion:map-outline"} class="navIcon" /></a></li>
-			<li class="menuopen"><a href="#"><Icon name="ion:list" class="navIcon" /></a></li>
-		</ul>
+ <nav class="subete">
+  <ul>
+   <li><a href="/"><Icon name={pageName==="index" ? "ion:home" : "ion:home-outline"} class="navIcon" /></a></li>
+   <li><a href="/results"><Icon name={pageName==="results" ? "ion:trophy" : "ion:trophy-outline"} class="navIcon" /></a></li>
+   <li><a href="/map"><Icon name={pageName==="map" ? "ion:map" : "ion:map-outline"} class="navIcon" /></a></li>
+   <li class="menuopen"><a href="#"><Icon name="ion:list" class="navIcon" /></a></li>
+  </ul>
 
 	</nav>
 	<nav class="menu">
@@ -24,10 +24,13 @@ const { pageName } = Astro.props;
 			<li><a class="text-20" href="/#contents-delayNews">遅延情報</a></li>
 			<li><a class="text-20" href="/#contents-timeTable">タイムテーブル</a></li>
 			<li><a class="text-20" href="/#contents-rulebook">ルールブック</a></li>
-			<li class="menutwitter" id=""><a class="menutwitter text-20" href="/#contents-twitter">Twitter情報</a></li>
+			<li class="menutwitter"><a class="menutwitter text-20" href="/#contents-twitter">Twitter情報</a></li>
 			<li><a class="text-20" href="/map#contents-placeMap">会場マップ</a></li>
 			<li><a class="text-20" href="/results#contents-tournament">試合結果</a></li>
 		</ul>
+    <div class="videowrap">
+     <video id="menuVideo" muted src="/menuanime.mp4"></video>
+    </div>
 		<ul class="barbottom">
 			<li>©WEB製作研究部</li>
 		</ul>
@@ -37,130 +40,178 @@ const { pageName } = Astro.props;
 	</nav>
 </div>
 <style>
-	.navIcon {
-		width: 24px;
-		height: 24px;
-		color: var(--color-white);
-	}
-	nav {
-		background-color: var(--color-primary-orange-100);
-		z-index: 1;
-	}
-	li{
-		list-style: none;
-		
-	}
-	.subete {
-		position: fixed;
-		max-width: 800px;
-		width: 100%;
-		height: 50px;
-		bottom: 0px;
-		z-index: 9;
-	}
-	/*メニューを横並びにする*/
-	.subete ul{
-		display: flex;
-		list-style: none;
-		padding:0;
-		margin:0;
-		max-width: 800px;
-		width:100%;
-	}
-	.subete li{
-		justify-content: center;
-		align-items: center;
-		display: flex;
-		text-align: center;
-		max-width: 800px;
-		width: 25%;
-		padding-top: 10px;
-		padding-bottom: 10px;
-		margin:0;
-	}
-	.subete a{
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
-	.menuprohibitscroll{
-		overflow-y: hidden;
-		height: 40px;
-	}
-	.menu a{
-		text-decoration: none;
-		color: var(--color-white);
-	}
-	.menu{
-		transform: translateY(100dvh);
-		transition: all .3s linear;
-		z-index: 9;
-		max-width: 800px;
-		width: 100%;
-		height: 100dvh;
-		position: relative;
-		align-items: bottom;
-	}
-	.menulink{
-		padding-left: 30px;
-	}
-	.menulink li{
-		padding-top: 15px;
-	}
-	#menuhome{
-		padding-bottom: 5px;
-		padding-top: 30px;
-	}
-	.menutwitter{
-		padding-bottom: 15px;
-	}
-	/* アニメーション後のメニューの状態 */
-	.menu.is-active{
-		z-index: 9;
-		position: fixed;
-		transform: translateY(calc(-100dvh + 40px));
-	}
-	.openbtn.is-active{
-		display: flex;
-		position:fixed;
-		z-index: 10;
-		bottom: 0;
-		right: 0;
-		cursor: pointer;
-		width: 25%;
-		height: 50px;
-		justify-content: center;
-		align-items: center;
-	}
-	.barbottom{
-		display: flex;
-		position: absolute;
-		padding-left: 30px;
-		bottom: 20px;
-	}
-	.barbottom li{
-		color: var(--color-white);
-	}
-	.openbtn{
-		display: none;
-	}
-	.openbtnIcon {
-		width: 24px;
-		height: 24px;
-		color: var(--color-white);
-	}
+ .navIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-white);
+ }
+ nav {
+  background-color: var(--color-primary-orange-100);
+  z-index: 1;
+ }
+ li{
+  list-style: none;
+  
+ }
+ .subete {
+  position: fixed;
+  max-width: 800px;
+  width: 100%;
+  height: 50px;
+  bottom: 0px;
+  z-index: 9;
+ }
+ /*メニューを横並びにする*/
+ .subete ul{
+  display: flex;
+  list-style: none;
+  padding:0;
+  margin:0;
+  max-width: 800px;
+  width:100%;
+ }
+ .subete li{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  max-width: 800px;
+  width: 25%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin:0;
+ }
+ .subete a{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+ }
+ .menuprohibitscroll{
+  overflow-y: hidden;
+  height: 40px;
+ }
+ .menu a{
+  text-decoration: none;
+  color: var(--color-white);
+ }
+ .menu{
+  transform: translateY(100dvh);
+  transition: all .3s linear;
+  z-index: 9;
+  max-width: 800px;
+  width: 100%;
+  height: 100dvh;
+  position: relative;
+  align-items: bottom;
+ }
+ .menulink{
+  padding-left: 30px;
+  position: relative;
+  z-index: 1;
+ }
+ .menulink li{
+  padding-top: 15px;
+ }
+ #menuhome{
+  padding-bottom: 5px;
+  padding-top: 30px;
+ }
+ .menutwitter{
+  padding-bottom: 15px;
+ }
+ .videowrap{
+  /* text-align: center; */
+  position: absolute;
+  left: 5%;
+  bottom: 90px;
+  z-index: 0;
+  width: 90%;
+  border-bottom: solid 1px #444;
+ }
+ video{
+  display: block;/*videoタグの下に親要素との隙間ができるのを解消*/
+  width: 100%;
+ }
+ /* アニメーション後のメニューの状態 */
+ .menu.is-active{
+  z-index: 9;
+  position: fixed;
+  transform: translateY(calc(-100dvh + 40px));
+ }
+ .openbtn.is-active{
+  display: flex;
+  position:fixed;
+  z-index: 10;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  width: 25%;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+ }
+ .barbottom{
+  display: flex;
+  position: absolute;
+  padding-left: 30px;
+  bottom: 20px;
+ }
+ .barbottom li{
+  color: var(--color-white);
+ }
+ .openbtn{
+  display: none;
+ }
+ .openbtnIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-white);
+ }
 </style>
 <script>
-	document.querySelector('.menuopen').addEventListener('click', function(){
-    document.querySelector('.menu').classList.toggle('is-active');
-	document.querySelector('.openbtn').classList.toggle('is-active');
-	});
-	document.querySelector('.openbtn').addEventListener('click', function(){
-    document.querySelector('.menu').classList.toggle('is-active');
-	document.querySelector('.openbtn').classList.toggle('is-active');
-	});
+ document.querySelector('.menuopen').addEventListener('click', function(){
+  document.querySelector('.menu').classList.toggle('is-active');
+  document.querySelector('.openbtn').classList.toggle('is-active');
+  document.querySelector('#menuVideo').classList.toggle('is-activeVideo');
+  if (document.querySelector('#menuVideo').classList.contains('is-activeVideo')) {
+    var video = document.getElementById('menuVideo');
+    video.play();
+    console.log("play");
+  } else {
+    var video = document.getElementById('menuVideo');
+    video.pause();
+    console.log("pause");
+     video.currentTime = 0;
+  }
+ });
+ document.querySelector('.openbtn').addEventListener('click', function(){
+  document.querySelector('.menu').classList.toggle('is-active');
+  document.querySelector('.openbtn').classList.toggle('is-active');
+  document.querySelector('#menuVideo').classList.toggle('is-activeVideo');
+  if (document.querySelector('#menuVideo').classList.contains('is-activeVideo')) {
+    var video = document.getElementById('menuVideo');
+    video.play();
+    console.log("play");
+  } else {
+    var video = document.getElementById('menuVideo');
+    video.pause();
+    console.log("pause");
+    video.currentTime = 0;
+  }
+ });
 	document.querySelector('.contents-link').addEventListener('click', function(){
     document.querySelector('.menu').classList.toggle('is-active');
-	document.querySelector('.openbtn').classList.toggle('is-active');
+	  document.querySelector('.openbtn').classList.toggle('is-active');
+        document.querySelector('#menuVideo').classList.toggle('is-activeVideo');
+  if (document.querySelector('#menuVideo').classList.contains('is-activeVideo')) {
+            var video = document.getElementById('menuVideo');
+            video.play();
+   console.log("play");
+        } else {
+            var video = document.getElementById('menuVideo');
+            video.pause();
+   console.log("pause");
+            video.currentTime = 0;
+        }
 	});
 </script>
