@@ -2,7 +2,7 @@ const delayValues = [];
 
 export async function fetchDelayNewsData() {
   try {
-    var scriptUrl = import.meta.env.PUBLIC_GOOGLE_API_KEY;
+    var scriptUrl = "https://script.google.com/macros/s/AKfycbzGDVB1KrosnxhTdX-TsP-_TW6w19PQF2UQ8v3OkPIsu5IZzweF031sKcvYoTKzzlyf/exec";
     // fetchを使用してデータを取得
     const newDelayValues = [];
 
