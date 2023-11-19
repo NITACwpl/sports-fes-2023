@@ -17,27 +17,27 @@ const { pageName } = Astro.props;
    <li class="menuopen"><a href="#"><Icon name="ion:list" class="navIcon" /></a></li>
   </ul>
 
- </nav>
- <nav class="menu">
-  <ul class="menulink">
-   <li id="menuhome"><a class="text-32" href="">Home</a></li>
-   <li><a class="text-20" href="">遅延情報</a></li>
-   <li><a class="text-20" href="">タイムテーブル</a></li>
-   <li><a class="text-20" href="">ルールブック</a></li>
-   <li class="menutwitter"><a class="menutwitter text-20" href="">Twitter情報</a></li>
-   <li><a class="text-20" href="">会場マップ</a></li>
-   <li><a class="text-20" href="">試合結果</a></li>
-  </ul>
-  <div class="videowrap">
-   <video id="menuVideo" muted src="/menuanime.mp4"></video>
-  </div>
-  <ul class="barbottom">
-   <li>©WEB製作研究部</li>
-  </ul>
-  <div class="openbtn">
-   <Icon name="ion:close" class="openbtnIcon" />
-  </div>
- </nav>
+	</nav>
+	<nav class="menu">
+		<ul class="menulink contents-link">
+			<li id="menuhome"><a class="text-32" href="/">Home</a></li>
+			<li><a class="text-20" href="/#contents-delayNews">遅延情報</a></li>
+			<li><a class="text-20" href="/#contents-timeTable">タイムテーブル</a></li>
+			<li><a class="text-20" href="/#contents-rulebook">ルールブック</a></li>
+			<li class="menutwitter"><a class="menutwitter text-20" href="/#contents-twitter">Twitter情報</a></li>
+			<li><a class="text-20" href="/map#contents-placeMap">会場マップ</a></li>
+			<li><a class="text-20" href="/results#contents-tournament">試合結果</a></li>
+		</ul>
+    <div class="videowrap">
+     <video id="menuVideo" muted src="/menuanime.mp4"></video>
+    </div>
+		<ul class="barbottom">
+			<li>©WEB製作研究部</li>
+		</ul>
+		<div class="openbtn">
+			<Icon name="ion:close" class="openbtnIcon" />
+		</div>
+	</nav>
 </div>
 <style>
  .navIcon {
@@ -174,21 +174,35 @@ const { pageName } = Astro.props;
   document.querySelector('.openbtn').classList.toggle('is-active');
   document.querySelector('#menuVideo').classList.toggle('is-activeVideo');
   if (document.querySelector('#menuVideo').classList.contains('is-activeVideo')) {
-            var video = document.getElementById('menuVideo');
-            video.play();
-   console.log("play");
-        } else {
-            var video = document.getElementById('menuVideo');
-            video.pause();
-   console.log("pause");
-            video.currentTime = 0;
-        }
-
+    var video = document.getElementById('menuVideo');
+    video.play();
+    console.log("play");
+  } else {
+    var video = document.getElementById('menuVideo');
+    video.pause();
+    console.log("pause");
+     video.currentTime = 0;
+  }
  });
  document.querySelector('.openbtn').addEventListener('click', function(){
   document.querySelector('.menu').classList.toggle('is-active');
   document.querySelector('.openbtn').classList.toggle('is-active');
   document.querySelector('#menuVideo').classList.toggle('is-activeVideo');
+  if (document.querySelector('#menuVideo').classList.contains('is-activeVideo')) {
+    var video = document.getElementById('menuVideo');
+    video.play();
+    console.log("play");
+  } else {
+    var video = document.getElementById('menuVideo');
+    video.pause();
+    console.log("pause");
+    video.currentTime = 0;
+  }
+ });
+	document.querySelector('.contents-link').addEventListener('click', function(){
+    document.querySelector('.menu').classList.toggle('is-active');
+	  document.querySelector('.openbtn').classList.toggle('is-active');
+        document.querySelector('#menuVideo').classList.toggle('is-activeVideo');
   if (document.querySelector('#menuVideo').classList.contains('is-activeVideo')) {
             var video = document.getElementById('menuVideo');
             video.play();
@@ -199,5 +213,5 @@ const { pageName } = Astro.props;
    console.log("pause");
             video.currentTime = 0;
         }
- });
+	});
 </script>
