@@ -1,7 +1,21 @@
 ---
 import SubTitle from "../SubTitle.astro";
+import Basket from "../TournamentItem/Basket.astro";
 ---
 
 <div class="tournament" id="contents-tournament">
     <SubTitle title="トーナメント" />
+    <Basket />
+
 </div>
+
+<style is:global>
+    .svg-tournament {
+        width: 100%;
+        height: 100%;
+    }
+
+    .winner {
+        fill: red;
+    }
+</style>
