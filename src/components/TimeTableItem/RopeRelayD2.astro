@@ -1,0 +1,60 @@
+---
+import { Icon } from "astro-iconify";
+import BattleGroup from "../BattleGroup.astro";
+---
+<div class="plus">
+    <div class="kyogi">
+        <div class="name text-16">
+            綱引き
+        </div>
+        <div class="place">
+            <Icon name="ph:map-pin-fill" class="placeIcon" />
+            <p class="text-12">グラウンド</p>
+        </div>
+    </div>
+    <div class="table"> <!-- typeはlunch, battleに。startIdはstart0900-1540まで。endIdは0920-1600まで。kouとotsuはなくてもOk  -->
+        <BattleGroup type="all" startId="start1400" endId="end1600" />
+    </div>
+</div>
+
+<style>
+    .plus {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 1910px;
+        height: 60px;
+    }
+    .kyogi {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5px;
+        row-gap: 5px;
+        width: 150px;
+    }
+    .place {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: left;
+        width: 100%;
+    }
+    .name {
+        width: 100%;
+    }
+    .placeIcon {
+        width: 16px;
+        height: 16px;
+        color: red;
+    }
+    .table {
+        height: 100%;
+        width: 1768px;
+        align-items: center;
+        display: grid;
+        gap: 4px;
+        grid-template-columns: 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px; /* 21 */
+    }
+</style>

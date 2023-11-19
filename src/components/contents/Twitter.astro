@@ -2,8 +2,49 @@
 import SubTitle from "../../components/SubTitle.astro";
 ---
 
-<div class="twitter">
-  <SubTitle title="Twitter情報" />
-  テスト
+
+ 
+  <div class="twitter">
   
-</div>
+    <span>
+      <div class="se">
+       <SubTitle title="Twitter" subTitle="忘れ物情報など" /> 
+       
+      </div>
+    </span>
+
+    <div class="test">
+      <a class="twitter-timeline" data-height="300" href="https://twitter.com/NitacGakuseikai?ref_src=twsrc%5Etfw">Tweets by NitacGakuseikai</a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
+     </script>
+    </div>
+  </div>
+
+<style>
+ 
+ .twitter{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin:0 auto;
+  }
+
+.test{
+  width:100%;
+  position:relative;
+
+}
+  .se{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  span{
+    vertical-align:baseline;
+  }
+
+ 
+
+
+</style>

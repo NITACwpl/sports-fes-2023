@@ -1,7 +1,269 @@
 ---
+import { Icon } from 'astro-iconify'
 import SubTitle from "../../components/SubTitle.astro";
+import RuleModal from '../RuleModal.astro';
 ---
 
+<SubTitle title="ルールブック" />
+<button class="closeButton modalClose">
+    <Icon name="ion:close-circle" class="closeButtonIcon" />
+</button>
 <div class="rulebook">
-    <SubTitle title="ルールブック" />
+    <div class="ruleItem">
+        <button class="ruleButton">
+            <Icon name="fa6-solid:earth-africa" class="sportIcon" />
+            <p class="text-12 sportName">共通ルール</p>
+        </button>
+        <div class="modalCover">
+            <div class="ruleModal">
+                <RuleModal name="all" />
+            </div>
+        </div>
+    </div>
+    <div class="ruleItem">
+        <button class="ruleButton">
+            <Icon name="fa6-solid:basketball" class="sportIcon" />
+            <p class="text-12 sportName">バスケットボール</p>
+        </button>
+        <div class="modalCover">
+            <div class="ruleModal">
+                <RuleModal name="basketball" />
+            </div>
+        </div>
+    </div>
+    <div class="ruleItem">
+        <button class="ruleButton">
+            <Icon name="fa-solid:table-tennis" class="sportIcon" />
+            <p class="text-12 sportName">卓球</p>
+        </button>
+        <div class="modalCover">
+            <div class="ruleModal">
+                <RuleModal name="tableTennis" />
+            </div>
+        </div>
+    </div>
+    <div class="ruleItem">
+        <button class="ruleButton">
+            <Icon name="cil:tennis" class="sportIcon" />
+            <p class="text-12 sportName">硬式テニス</p>
+        </button>
+        <div class="modalCover">
+            <div class="ruleModal">
+                <RuleModal name="tennis" />
+            </div>
+        </div>
+    </div>
+    <div class="ruleItem">
+        <button class="ruleButton">
+            <Icon name="fa6-solid:baseball-bat-ball" class="sportIcon" />
+            <p class="text-12 sportName">ソフトボール</p>
+        </button>
+        <div class="modalCover">
+            <div class="ruleModal">
+                <RuleModal name="softball" />
+            </div>
+        </div>
+    </div>
+    <div class="ruleItem">
+        <button class="ruleButton">
+            <Icon name="fluent:sport-soccer-24-filled" class="sportIcon" />
+            <p class="text-12 sportName">サッカー</p>
+        </button>
+        <div class="modalCover">
+            <div class="ruleModal">
+                <RuleModal name="soccer" />
+            </div>
+        </div>
+    </div>
+    <div class="ruleItem">
+        <button class="ruleButton">
+            <Icon name="icon-park-outline:badminton" class="sportIcon" />
+            <p class="text-12 sportName">バドミントン</p>
+        </button>
+        <div class="modalCover">
+            <div class="ruleModal">
+                <RuleModal name="badminton" />
+            </div>
+        </div>
+    </div>
+    <div class="ruleItem">
+        <button class="ruleButton">
+            <Icon name="game-icons:beach-ball" class="sportIcon" />
+            <p class="text-12 sportName">バレーボール</p>
+        </button>
+        <div class="modalCover">
+            <div class="ruleModal">
+                <RuleModal name="volleyball" />
+            </div>
+        </div>
+    </div>
+    <div class="ruleItem">
+        <button class="ruleButton">
+            <Icon name="bx:run" class="sportIcon" />
+            <p class="text-12 sportName">リレー</p>
+        </button>
+        <div class="modalCover">
+            <div class="ruleModal">
+                <RuleModal name="relay" />
+            </div>
+        </div>
+    </div>
+    <div class="ruleItem">
+        <button class="ruleButton">
+            <Icon name="game-icons:rope-coil" class="sportIcon" />
+            <p class="text-12 sportName">綱引き</p>
+        </button>
+        <div class="modalCover">
+            <div class="ruleModal">
+                <RuleModal name="rope" />
+            </div>
+        </div>
+    </div>
 </div>
+
+<style>
+    .rulebook {
+        width: 100%;
+        display: grid;
+        grid-gap: 14px;
+    }
+    @media screen and (max-width: 300px) {
+        .rulebook {
+            grid-template-columns: 1fr;
+        }
+    }
+    @media screen and (min-width: 301px) and (max-width: 430px) {
+        .rulebook {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media screen and (min-width: 431px) and (max-width: 600px) {
+        .rulebook {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    @media screen and (min-width: 601px) {
+        .rulebook {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+
+    .sportIcon {
+        width: 24px;
+        height: 24px;
+        color: var(--color-primary-orange-100);
+    }
+    .sportName {
+        color: var(--color-primary-black);
+    }
+    .ruleItem {
+        width: 100%;
+        min-width: 128px;
+        height: 128px;
+        border-radius: 15px;
+        border: solid 2px var(--color-primary-orange-100);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 6px;
+        text-decoration: none;
+        background-color: var(--color-white);
+    }
+    .ruleButton {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        border: none;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 6px;
+        text-decoration: none;
+    }
+    .ruleModal {
+        overflow-y: auto;
+        width: 90%;
+        height: 90%;
+    }
+    .modalCover {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100vw;
+        max-width: 800px;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        display: none;
+    }
+    .modalOpen {
+        display: flex;
+    }
+    .closeButton {
+        height: 40px;
+        width: 40px;
+        color: var(--color-white);
+        border: none;
+        border-radius: 50%;
+        background-color: var(--color-primary-orange-100);
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 20;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+    }
+    .closeButtonIcon {
+        width: 105%;
+        height: 105%;
+    }
+    .modalClose {
+        display: none;
+    }
+</style>
+
+<script>
+    const openButtons = document.querySelectorAll('.ruleItem');
+    const closeButton = document.querySelector('.closeButton');
+
+    // ボタンがクリックされたときに対応するモーダルを開くイベントリスナーを追加する。
+    openButtons.forEach((button) => {
+        button.addEventListener('click', () => onModalOpen(button));
+    });
+
+    closeButton.addEventListener('click', () => onModalClose());
+
+    function onModalOpen(clickedButton) {
+        var modalCover = clickedButton.querySelector('.modalCover');
+
+        document.querySelectorAll('.modalCover').forEach((modal) => {
+            modal.classList.remove('modalOpen');
+        });
+
+        closeButton.classList.remove('modalClose');
+        modalCover.classList.add('modalOpen');
+
+        modalCover.addEventListener('click', () => {
+            console.log('モーダルカバーがクリックされました。');
+            modal.classList.remove('modalOpen');
+        });
+    }
+
+    function onModalClose() {
+        document.querySelectorAll('.modalCover').forEach((modal) => {
+            modal.classList.remove('modalOpen');
+        closeButton.classList.add('modalClose');
+        });
+    }
+</script>

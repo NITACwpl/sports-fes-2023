@@ -10,7 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource/roboto-condensed": "^5.0.13",
+    "@fontsource/zen-kaku-gothic-antique": "^5.0.16",
     "astro": "^3.5.0",
-    "astro-icon": "^0.8.1"
+    "astro-iconify": "^1.2.0"
   }
 }
