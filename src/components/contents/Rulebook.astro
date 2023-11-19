@@ -4,6 +4,7 @@ import SubTitle from "../../components/SubTitle.astro";
 import RuleModal from '../RuleModal.astro';
 ---
 
+<div class="anchor" id="contents-rulebook"></div>
 <SubTitle title="ルールブック" />
 <button class="closeButton modalClose">
     <Icon name="ion:close-circle" class="closeButtonIcon" />
@@ -191,12 +192,13 @@ import RuleModal from '../RuleModal.astro';
         height: 90%;
     }
     .modalCover {
-        position: absolute;
+        position: fixed;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
         background-color: rgba(0, 0, 0, 0.5);
         width: 100vw;
+        max-width: 800px;
         height: 100vh;
         justify-content: center;
         align-items: center;
@@ -215,7 +217,8 @@ import RuleModal from '../RuleModal.astro';
         background-color: var(--color-primary-orange-100);
         position: fixed;
         top: 0;
-        left: 0;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 20;
         display: flex;
         justify-content: center;
@@ -252,10 +255,7 @@ import RuleModal from '../RuleModal.astro';
         closeButton.classList.remove('modalClose');
         modalCover.classList.add('modalOpen');
 
-        modalCover.addEventListener('click', () => {
-            console.log('モーダルカバーがクリックされました。');
-            modal.classList.remove('modalOpen');
-        });
+
     }
 
     function onModalClose() {

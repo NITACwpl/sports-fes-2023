@@ -1,6 +1,16 @@
 ---
 import { Icon } from "astro-iconify";
 import BattleGroup from "../BattleGroup.astro";
+
+const responce = [
+    { kou: "0", otsu: "0" },
+    { kou: "0", otsu: "0" },
+    { kou: "0", otsu: "0" },
+    { kou: "0", otsu: "0" },
+    { kou: "0", otsu: "0" },
+    { kou: "0", otsu: "0" },
+    { kou: "0", otsu: "0" },
+];
 ---
 <div class="plus">
     <div class="kyogi">
@@ -13,11 +23,14 @@ import BattleGroup from "../BattleGroup.astro";
         </div>
     </div>
     <div class="table"> <!-- typeはlunch, battleに。startIdはstart0900-1540まで。endIdは0920-1600まで。kouとotsuはなくてもOk  -->
-        <BattleGroup type="lunch" startId="start0900" endId="end0920" />
-        <BattleGroup type="battle" startId="start0920" endId="end0940" kou="1M" otsu="2E" />
-        <BattleGroup type="battle" startId="start0940" endId="end1020" kou="1M" otsu="2E" />
-        <BattleGroup type="battle" startId="start1100" endId="end1120" kou="1M" otsu="2E" />
-        <BattleGroup type="battle" startId="start1540" endId="end1600" kou="3M" otsu="専" />
+        <BattleGroup type="battle" startId="start1000" endId="end1020" kou={responce[0].kou} otsu={responce[0].otsu} />
+        <BattleGroup type="battle" startId="start1040" endId="end1100" kou={responce[1].kou} otsu={responce[1].otsu} />
+        <BattleGroup type="battle" startId="start1120" endId="end1140" kou={responce[2].kou} otsu={responce[2].otsu} />
+        <BattleGroup type="lunch" startId="start1200" endId="end1240" />
+        <BattleGroup type="battle" startId="start1240" endId="end1300" kou={responce[3].kou} otsu={responce[3].otsu} />
+        <BattleGroup type="battle" startId="start1320" endId="end1340" kou={responce[4].kou} otsu={responce[4].otsu} />
+        <BattleGroup type="battle" startId="start1400" endId="end1420" kou={responce[5].kou} otsu={responce[5].otsu} />
+        <BattleGroup type="battle" startId="start1440" endId="end1500" kou={responce[6].kou} otsu={responce[6].otsu} />
     </div>
 </div>
 
