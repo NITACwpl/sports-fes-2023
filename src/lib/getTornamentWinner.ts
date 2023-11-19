@@ -1,14 +1,18 @@
-export function getWinner(fetchData: Array<Array<string>>) {
-    const gDom = (id: string) => document.getElementsByClassName(id);
+export function getWinner(sport: string, fetchData: Array<Array<string>>) {
+    const gDom = (id: string) => document.querySelector(`.${sport} ${id}`);
 
     for (let i = 0; i < 20; i++) {
-        if (fetchData[i][0] === fetchData[i][2]) {
-            let round = gDom(`round${i + 1}A`)[0].children[1];
+        if ((fetchData[i][0] === fetchData[i][2]) && (fetchData[i][2] !== "0")) {
+            let round = gDom(`.round${i + 1}A`).children[1];
             round.classList.add('winner');
         }
-        else if (fetchData[i][1] === fetchData[i][2]) {
-            let round = gDom(`round${i + 1}B`)[0].children[1];
+        else if ((fetchData[i][1] === fetchData[i][2]) && (fetchData[i][2] !== "0")) {
+            let round = gDom(`.round${i + 1}B`).children[1];
             round.classList.add('winner');
         }
+    }
+    if (fetchData[19][2] !== "0") {
+        let round = gDom(`.round_final`).children[2];
+        round.classList.add('winner');
     }
 }
