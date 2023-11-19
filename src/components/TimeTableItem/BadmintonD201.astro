@@ -11,16 +11,19 @@ const responce = [
     { kou: "0", otsu: "0" },
     { kou: "0", otsu: "0" },
     { kou: "0", otsu: "0" },
+    { kou: "0", otsu: "0" },
+    { kou: "0", otsu: "0" },
+    { kou: "0", otsu: "0" },
 ];
 ---
 <div class="plus">
     <div class="kyogi">
         <div class="name text-16">
-            バレーボール
+            バドミントン
         </div>
         <div class="place">
             <Icon name="ph:map-pin-fill" class="placeIcon" />
-            <p class="text-12">体育館(奥)</p>
+            <p class="text-12">体育館(前1)</p>
         </div>
     </div>
     <div class="table"> <!-- typeはlunch, battleに。startIdはstart0900-1540まで。endIdは0920-1600まで。kouとotsuはなくてもOk  -->
@@ -28,11 +31,14 @@ const responce = [
         <BattleGroup type="battle" startId="start1020" endId="end1040" kou={responce[1].kou} otsu={responce[1].otsu} />
         <BattleGroup type="battle" startId="start1040" endId="end1100" kou={responce[2].kou} otsu={responce[2].otsu} />
         <BattleGroup type="battle" startId="start1100" endId="end1120" kou={responce[3].kou} otsu={responce[3].otsu} />
-        <BattleGroup type="battle" startId="start1140" endId="end1200" kou={responce[4].kou} otsu={responce[4].otsu} />
-        <BattleGroup type="lunch" startId="start1200" endId="end1240" />
-        <BattleGroup type="battle" startId="start1240" endId="end1300" kou={responce[5].kou} otsu={responce[5].otsu} />
-        <BattleGroup type="battle" startId="start1300" endId="end1320" kou={responce[6].kou} otsu={responce[6].otsu} />
-        <BattleGroup type="battle" startId="start1340" endId="end1400" kou={responce[7].kou} otsu={responce[7].otsu} />
+        <BattleGroup type="battle" startId="start1120" endId="end1140" kou={responce[4].kou} otsu={responce[4].otsu} />
+        <BattleGroup type="battle" startId="start1140" endId="end1200" kou={responce[5].kou} otsu={responce[5].otsu} />
+        <BattleGroup type="battle" startId="start1200" endId="end1220" kou={responce[6].kou} otsu={responce[6].otsu} />
+        <BattleGroup type="lunch" startId="start1220" endId="end1300" />
+        <BattleGroup type="battle" startId="start1300" endId="end1320" kou={responce[7].kou} otsu={responce[7].otsu} />
+        <BattleGroup type="battle" startId="start1320" endId="end1340" kou={responce[8].kou} otsu={responce[8].otsu} />
+        <BattleGroup type="battle" startId="start1400" endId="end1420" kou={responce[9].kou} otsu={responce[9].otsu} />
+        <BattleGroup type="battle" startId="start1420" endId="end1440" kou={responce[10].kou} otsu={responce[10].otsu} />
     </div>
 </div>
 

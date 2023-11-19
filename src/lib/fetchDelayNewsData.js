@@ -9,7 +9,6 @@ export async function fetchDelayNewsData() {
     const response = await fetch(scriptUrl);
     const jsonData = await response.json();
     const data = jsonData[1];
-    console.log(data);
     for (let i = 0; i < data.length; i++) {
       let nowTime = new Date(data[i][2]);
       newDelayValues.push({
@@ -20,9 +19,10 @@ export async function fetchDelayNewsData() {
     }
 
     delayValues.splice(0, delayValues.length, ...newDelayValues);
+    
+    console.log(delayValues);
 
     return delayValues;
-    return [];
   } catch (error) {
     console.error('Error:', error);
     throw error;
