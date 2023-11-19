@@ -1,6 +1,11 @@
 ---
 import { Icon } from "astro-iconify";
 import BattleGroup from "../BattleGroup.astro";
+
+const responce = [
+    { kou: "0", otsu: "0" },
+    { kou: "0", otsu: "0" },
+];
 ---
 <div class="plus">
     <div class="kyogi">
@@ -13,11 +18,9 @@ import BattleGroup from "../BattleGroup.astro";
         </div>
     </div>
     <div class="table"> <!-- typeはlunch, battleに。startIdはstart0900-1540まで。endIdは0920-1600まで。kouとotsuはなくてもOk  -->
-        <BattleGroup type="lunch" startId="start0900" endId="end0920" />
-        <BattleGroup type="battle" startId="start0920" endId="end0940" kou="1M" otsu="2E" />
-        <BattleGroup type="battle" startId="start0940" endId="end1020" kou="1M" otsu="2E" />
-        <BattleGroup type="battle" startId="start1100" endId="end1120" kou="1M" otsu="2E" />
-        <BattleGroup type="battle" startId="start1540" endId="end1600" kou="3M" otsu="専" />
+        <BattleGroup type="battle" startId="start1000" endId="end1040" kou={responce[0].kou} otsu={responce[0].otsu} />
+        <BattleGroup type="battle" startId="start1140" endId="end1220" kou={responce[1].kou} otsu={responce[1].otsu} />
+        <BattleGroup type="lunch" startId="start1220" endId="end1300" />
     </div>
 </div>
 
