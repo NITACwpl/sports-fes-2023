@@ -23,6 +23,7 @@ let maps = [
     <div class="acordion-wrapper">
         {
             maps.map(item => (
+                // acordion here
                 <div class="acordion-item">
                     <Fragment set:html={item} />
                 </div>
@@ -30,6 +31,26 @@ let maps = [
         }
     </div>
 </div>
+
+<style is:global>
+    .svg-tournament {
+        width: 100%;
+        height: 100%;
+    }
+
+    .winner {
+        fill: red;
+    }
+
+    .acordion-wrapper {
+        margin-inline: auto;
+    }
+
+    .acordion-item {
+        border-radius: 4px;
+        overflow: hidden;
+    }
+</style>
 
 <script>
     import { getWinner } from "../../lib/getTornamentWinner";
@@ -62,14 +83,3 @@ let maps = [
         getWinner(sports[i], data);
     }
 </script>
-
-<style is:global>
-    .svg-tournament {
-        width: 100%;
-        height: 100%;
-    }
-
-    .winner {
-        fill: red;
-    }
-</style>
