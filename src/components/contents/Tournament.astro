@@ -7,6 +7,7 @@ import SoftballMap from "/tournaments/softball.svg?raw";
 import SoccerMap from "/tournaments/soccer.svg?raw";
 import BadmintonMap from "/tournaments/badminton.svg?raw";
 import ValleyballMap from "/tournaments/valleyball.svg?raw";
+import Icon from "astro-iconify";
 let maps = [
     {
         image: BaskertMap,
@@ -40,18 +41,28 @@ let maps = [
 ---
 
 <div class="tournament" id="contents-tournament">
+    <div id="loading">
+        <Icon name="mingcute:loading-line" class="loading-icon" />
+        <p class="text-20">情報を更新中です。</p>
+        <p class="text-20">5秒間待ってくれ！！</p>
+        <button class="loading-cancel text-16">閉じる</button>
+    </div>
     <SubTitle title="トーナメント" />
+    <button class="reload">
+        <Icon name="ion:reload" class="reload-icon" />
+        <p class="text-16">最新情報をGet!!</p>
+    </button>
     <div class="acordion-wrapper">
         {
-        maps.map(item => (
-        // acordion here
-        <details class="accordion-001">
-        <summary>{item.name}</summary>
-        <div>
-            <Fragment set:html={item.image} />
-        </div>
-        </details>
-        ))
+            maps.map((item) => (
+                // acordion here
+                <details class="accordion-001">
+                    <summary>{item.name}</summary>
+                    <div>
+                        <Fragment set:html={item.image} />
+                    </div>
+                </details>
+            ))
         }
     </div>
 </div>
@@ -66,10 +77,73 @@ let maps = [
         fill: red;
     }
 
+    .reload {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        margin-block: 20px;
+        padding: 10px;
+        border-radius: 4px;
+        background-color: var(--color-primary-orange-200);
+        cursor: pointer;
+    }
+
+    .reload-icon {
+        width: 16px;
+        height: 16px;
+        margin-inline: 5px;
+    }
+
+    #loading {
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        visibility: hidden;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100dvh;
+        z-index: 1000;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+    #loading.is-active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .loading-icon {
+        width: 100px;
+        height: 100px;
+        color: var(--color-primary-orange-200);
+        animation: spin 1s linear infinite;
+        transition: all 3s ease-in-out;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .loading-cancel {
+        padding: 12px 20px;
+        margin-top: 10px;
+        border-radius: 50px;
+        background-color: var(--color-primary-orange-200);
+        cursor: pointer;
+    }
+
     .acordion-wrapper {
         margin-inline: auto;
     }
-
 
     .accordion-001 {
         max-width: 100%;
@@ -102,10 +176,10 @@ let maps = [
     .accordion-001 summary::before,
     .accordion-001 summary::after {
         width: 3px;
-        height: .9em;
+        height: 0.9em;
         border-radius: 5px;
         background-color: #fff;
-        content: '';
+        content: "";
     }
 
     .accordion-001 summary::before {
@@ -115,7 +189,7 @@ let maps = [
     }
 
     .accordion-001 summary::after {
-        transition: rotate .3s;
+        transition: rotate 0.3s;
     }
 
     .accordion-001[open] summary::after {
@@ -135,22 +209,46 @@ let maps = [
         "badminton",
         "valleyball-female",
         "valleyball-male",
-    ]
+    ];
 
-    const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbzGDVB1KrosnxhTdX-TsP-_TW6w19PQF2UQ8v3OkPIsu5IZzweF031sKcvYoTKzzlyf/exec",
-    );
-    const fetchData = await response.json();
+    let fetchData;
 
-    for (let i = 0; i < sports.length; i++) {
-        let data;
-        if (sports[i] === "valleyball-female") {
-            data = fetchData[i + 2].slice(0, 3);
-        } else if (sports[i] === "valleyball-male") {
-            data = fetchData[i + 1].slice(3, 8);
-        } else {
-            data = fetchData[i + 2];
+    const getTournamentData = async () => {
+        try {
+            document.querySelector("#loading").classList.add("is-active");
+            const response = await fetch(
+                "https://script.google.com/macros/s/AKfycbzGDVB1KrosnxhTdX-TsP-_TW6w19PQF2UQ8v3OkPIsu5IZzweF031sKcvYoTKzzlyf/exec",
+            );
+            fetchData = await response.json();
+        } catch (error) {
+            console.log(error);
+        } finally {
+            for (let i = 0; i < sports.length; i++) {
+                let data;
+                if (sports[i] === "valleyball-female") {
+                    data = fetchData[i + 2].slice(0, 3);
+                } else if (sports[i] === "valleyball-male") {
+                    data = fetchData[i + 1].slice(3, 8);
+                } else {
+                    data = fetchData[i + 2];
+                }
+                getWinner(sports[i], data);
+            }
+            document.querySelector("#loading").classList.remove("is-active");
         }
-        getWinner(sports[i], data);
-    }
+    };
+
+    window.onload = () => {
+        getTournamentData();
+    };
+
+    const reloadButton = document.querySelector(".reload");
+    reloadButton.addEventListener("click", () => {
+        getTournamentData();
+    });
+
+    const cancelButton = document.querySelector(".loading-cancel");
+    cancelButton.addEventListener("click", () => {
+        document.querySelector("#loading").classList.remove("is-active");
+    });
 </script>
