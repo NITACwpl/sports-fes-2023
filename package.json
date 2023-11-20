@@ -14,5 +14,8 @@
     "@fontsource/zen-kaku-gothic-antique": "^5.0.16",
     "astro": "^3.5.0",
     "astro-iconify": "^1.2.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.6"
   }
 }
