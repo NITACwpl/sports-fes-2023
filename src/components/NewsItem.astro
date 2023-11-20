@@ -1,10 +1,15 @@
 ---
-const data = Astro.props;
+interface Props {
+	content: string;
+    updateAt?: string;
+}
+
+const { content, updateAt } = Astro.props;
 ---
 
 <div class="announcement-item">
-    <p class="date" class="num-10">2023-11-19</p>
-    <p class="title" class="text-12">公開しました</p>
+    {updateAt && <p class="date" class="num-10">{updateAt}</p>}<!--2023-11-19-->
+    <p class="title" class="text-12">{content}</p>
 </div>
 
 <style>

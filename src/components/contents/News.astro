@@ -1,6 +1,9 @@
 ---
 import SubTitle from "../../components/SubTitle.astro";
 import NewsItem from "../../components/NewsItem.astro";
+import { fetchNewsData } from "../../lib/fetchNewsData";
+
+const response = await fetchNewsData();
 
 ---
 
@@ -8,7 +11,16 @@ import NewsItem from "../../components/NewsItem.astro";
     <SubTitle title="お知らせ" />
     <div class="news-container">
         <div id="announcement-container">
-                <NewsItem/>
+
+                {response.length !== 0 ? 
+                    (
+                      response.map((NewsValue, index) => (
+                        <NewsItem content={NewsValue.content} updateAt={NewsValue.updateAt} />
+                      ))
+                    ) : (
+                        <div class="text-12 text-center">お知らせはありません。</div>
+                    )
+                }
         </div>
     </div>
 </div>
