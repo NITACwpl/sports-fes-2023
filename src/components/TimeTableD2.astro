@@ -1,7 +1,8 @@
 ---
 import { Icon } from "astro-iconify";
 
-import BadmintonD2 from "./TimeTableItem/BadmintonD2.astro";
+import BadmintonD201 from "./TimeTableItem/BadmintonD201.astro";
+import BadmintonD202 from "./TimeTableItem/BadmintonD202.astro";
 import ValleyD2 from "./TimeTableItem/ValleyD2.astro";
 import SoftD201 from "./TimeTableItem/SoftD201.astro";
 import SoftD202 from "./TimeTableItem/SoftD202.astro";
@@ -15,6 +16,9 @@ import RopeRelayD2 from "./TimeTableItem/RopeRelayD2.astro";
         <p class="text-12">競技</p>
     </div>
     <div class="fixedIcons">
+      <div class="fixedIconHolder">
+        <Icon name="icon-park-outline:badminton" class="fixedIcon" />
+      </div>
       <div class="fixedIconHolder">
         <Icon name="icon-park-outline:badminton" class="fixedIcon" />
       </div>
@@ -62,7 +66,8 @@ import RopeRelayD2 from "./TimeTableItem/RopeRelayD2.astro";
         <p class="num-12 timeItem">16:00</p>
     </div>
     <div class="scrollItems">
-        <BadmintonD2 />
+        <BadmintonD201 />
+        <BadmintonD202 />
         <ValleyD2 />
         <SoftD201 />
         <SoftD202 />

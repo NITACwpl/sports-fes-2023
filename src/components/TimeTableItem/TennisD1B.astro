@@ -1,14 +1,17 @@
 ---
 import { Icon } from "astro-iconify";
 import BattleGroup from "../BattleGroup.astro";
+import { fetchTimeTableData } from "../../lib/fetchTimeTableData";
 
-const responce = [
+var responce = [
     { kou: "0", otsu: "0" },
     { kou: "0", otsu: "0" },
     { kou: "0", otsu: "0" },
     { kou: "0", otsu: "0" },
     { kou: "0", otsu: "0" },
 ];
+
+responce = await fetchTimeTableData("TennisD1B");
 ---
 <div class="plus">
     <div class="kyogi">
