@@ -25,7 +25,7 @@ import DelayNewsItem from "../../components/DelayNewsItem.astro";
                 <span class="updateAtTime num-10">03:34</span>
             </div>
             <div class="delay text-12">
-                <span class="delayTime num-24">N/A</span>
+                <span class="delayTime num-24"><Icon name="line-md:downloading-loop" class="loading" /></span>
                 分
             </div>
         </div>
@@ -38,7 +38,7 @@ import DelayNewsItem from "../../components/DelayNewsItem.astro";
                 <span class="updateAtTime num-10">03:34</span>
             </div>
             <div class="delay text-12">
-                <span class="delayTime num-24">N/A</span>
+                <span class="delayTime num-24"><Icon name="line-md:downloading-loop" class="loading" /></span>
                 分
             </div>
         </div>
@@ -51,7 +51,7 @@ import DelayNewsItem from "../../components/DelayNewsItem.astro";
                 <span class="updateAtTime num-10">03:34</span>
             </div>
             <div class="delay text-12">
-                <span class="delayTime num-24">N/A</span>
+                <span class="delayTime num-24"><Icon name="line-md:downloading-loop" class="loading" /></span>
                 分
             </div>
         </div>
@@ -64,7 +64,7 @@ import DelayNewsItem from "../../components/DelayNewsItem.astro";
                 <span class="updateAtTime num-10">03:34</span>
             </div>
             <div class="delay text-12">
-                <span class="delayTime num-24">N/A</span>
+                <span class="delayTime num-24"><Icon name="line-md:downloading-loop" class="loading" /></span>
                 分
             </div>
         </div>
@@ -77,7 +77,7 @@ import DelayNewsItem from "../../components/DelayNewsItem.astro";
                 <span class="updateAtTime num-10">03:34</span>
             </div>
             <div class="delay text-12">
-                <span class="delayTime num-24">N/A</span>
+                <span class="delayTime num-24"><Icon name="line-md:downloading-loop" class="loading" /></span>
                 分
             </div>
         </div>
@@ -90,7 +90,7 @@ import DelayNewsItem from "../../components/DelayNewsItem.astro";
                 <span class="updateAtTime num-10">03:34</span>
             </div>
             <div class="delay text-12">
-                <span class="delayTime num-24">N/A</span>
+                <span class="delayTime num-24"><Icon name="line-md:downloading-loop" class="loading" /></span>
                 分
             </div>
         </div>
@@ -103,7 +103,7 @@ import DelayNewsItem from "../../components/DelayNewsItem.astro";
                 <span class="updateAtTime num-10">03:34</span>
             </div>
             <div class="delay text-12">
-                <span class="delayTime num-24">N/A</span>
+                <span class="delayTime num-24"><Icon name="line-md:downloading-loop" class="loading" /></span>
                 分
             </div>
         </div>
@@ -116,7 +116,7 @@ import DelayNewsItem from "../../components/DelayNewsItem.astro";
                 <span class="updateAtTime num-10">03:34</span>
             </div>
             <div class="delay text-12">
-                <span class="delayTime num-24">N/A</span>
+                <span class="delayTime num-24"><Icon name="line-md:downloading-loop" class="loading" /></span>
                 分
             </div>
         </div>
@@ -129,7 +129,7 @@ import DelayNewsItem from "../../components/DelayNewsItem.astro";
                 <span class="updateAtTime num-10">03:34</span>
             </div>
             <div class="delay text-12">
-                <span class="delayTime num-24">N/A</span>
+                <span class="delayTime num-24"><Icon name="line-md:downloading-loop" class="loading" /></span>
                 分
             </div>
         </div>
@@ -194,12 +194,19 @@ import DelayNewsItem from "../../components/DelayNewsItem.astro";
   }
   .delay {
     text-align: right;
+    width: fit-content;
+    min-width: 45px;
   }
   .delayTime {
     color: var(--color-primary-orange-100);
   }
   #sport08 {
     border-radius: 0 0 4px 4px;
+  }
+  .loading {
+    width: 24px;
+    height: 24px;
+    color: var(--color-primary-orange-100);
   }
 </style>
 
