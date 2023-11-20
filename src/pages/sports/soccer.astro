@@ -2,10 +2,9 @@
 import { Icon } from "astro-iconify";
 import SubTitle from "../../components/SubTitle.astro";
 import LayoutSoccer from '../../layouts/LayoutSoccer.astro';
-import BasketD1F from "../../components/TimeTableItem/BasketD1F.astro";
-import BasketD1B from "../../components/TimeTableItem/BasketD1B.astro";
-import Rule04 from "../../components/rulePDF/Rule04.astro";
-import Rule05 from "../../components/rulePDF/Rule05.astro";
+import Rule15 from "../../components/rulePDF/Rule15.astro";
+import Rule16 from "../../components/rulePDF/Rule16.astro";
+import SoccerD1 from "../../components/TimeTableItem/SoccerD1.astro";
 import SoccerD2 from "../../components/TimeTableItem/SoccerD2.astro";
 ---
 <LayoutSoccer title="sports">
@@ -51,6 +50,7 @@ import SoccerD2 from "../../components/TimeTableItem/SoccerD2.astro";
                 <p class="num-12 timeItem">16:00</p>
             </div>
             <div class="scrollItems">
+                <SoccerD1 />
                 <SoccerD2 />
             </div>
             </div>
@@ -60,8 +60,8 @@ import SoccerD2 from "../../components/TimeTableItem/SoccerD2.astro";
             
         </div>
         <SubTitle title="ルールブック"/>
-        <Rule04 />
-        <Rule05 />
+        <Rule15 />
+        <Rule16 />
     </div>
 
 </LayoutBasketball>

@@ -1,13 +1,11 @@
 ---
 import { Icon } from "astro-iconify";
 import SubTitle from "../../components/SubTitle.astro";
-import LayoutRoperellay from '../../layouts/LayoutRoperellay.astro';
-import BasketD1F from "../../components/TimeTableItem/BasketD1F.astro";
-import BasketD1B from "../../components/TimeTableItem/BasketD1B.astro";
-import Rule04 from "../../components/rulePDF/Rule04.astro";
-import Rule05 from "../../components/rulePDF/Rule05.astro";
+import LayoutRopeRellay from '../../layouts/LayoutRopeRelay.astro';
+import RopeRelayD2 from "../../components/TimeTableItem/RopeRelayD2.astro";
+import Rule18 from "../../components/rulePDF/Rule18.astro";
 ---
-<LayoutRoperellay title="sports">
+<LayoutRopeRellay title="sports">
     <div class="sports">
         <SubTitle title="タイムテーブル" />
         <div class="table">
@@ -16,9 +14,6 @@ import Rule05 from "../../components/rulePDF/Rule05.astro";
                 <p class="text-12">競技</p>
             </div>
             <div class="fixedIcons">
-                <div class="fixedIconHolder">
-                <Icon name="game-icons:rope-coil" class="fixedIcon" />
-                </div>
                 <div class="fixedIconHolder">
                 <Icon name="game-icons:rope-coil" class="fixedIcon" />
                 </div>
@@ -59,15 +54,14 @@ import Rule05 from "../../components/rulePDF/Rule05.astro";
             
         </div>
         <SubTitle title="ルールブック"/>
-        <Rule04 />
-        <Rule05 />
+        <Rule18 />
     </div>
 
 </LayoutBasketball>
 
 <style>
     .table {
-      height: 170px;
+      height: 110px;
       width: 100%;
       display: flex;
       border-radius: 4px;

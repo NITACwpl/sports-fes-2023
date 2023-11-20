@@ -1,9 +1,9 @@
-<div class="Basketball-Container">
+<div class="Badminton-Container">
     <slot />
 </div>
 
 <style>
-    .Basketball-Container {
+    .Badminton-Container {
         width: 100%;
         height: 100%;
 		display: flex;
@@ -121,7 +121,7 @@
 
 <style is:global>
 	/* JSで管理していてmoduleCSSだとバグるので、、 */
-    .fallBasketball01 {
+    .fallBadminton01 {
         background-image: url(/fallsports/basketball-ball_red.svg); /* TODO */
         background-size: cover;
         background-position: center;
@@ -129,7 +129,7 @@
         animation: fall01 10s linear;
 		z-index: -1;
     }
-    .fallBasketball02 {
+    .fallBadminton02 {
         background-image: url(/fallsports/basketball-ball_yello.svg); /* TODO */
         background-size: cover;
         background-position: center;
@@ -137,7 +137,7 @@
         animation: fall02 10s linear;
 		z-index: -1;
     }
-    .fallBasketball03 {
+    .fallBadminton03 {
         background-image: url(/fallsports/basketball-ball_green.svg); /* TODO */
         background-size: cover;
         background-position: center;
@@ -145,7 +145,7 @@
         animation: fall01 10s linear;
 		z-index: -1;
     }
-    .fallBasketball04 {
+    .fallBadminton04 {
         background-image: url(/fallsports/basketball-ball_brown.svg); /* TODO */
         background-size: cover;
         background-position: center;
@@ -156,11 +156,11 @@
 </style>
 
 <script>
-    let leafContainer = document.querySelector(".Basketball-Container");
+    let leafContainer = document.querySelector(".Badminton-Container");
     
     const createLeaf01 = () => {
         let leaf = document.createElement("span");
-        leaf.className = "fallBasketball01";
+        leaf.className = "fallBadminton01";
     
         let minSize = 20;
         let maxSize = 30;
@@ -179,7 +179,7 @@
     };
     const createLeaf02 = () => {
         let leaf = document.createElement("span");
-        leaf.className = "fallBasketball02";
+        leaf.className = "fallBadminton02";
     
         let minSize = 20;
         let maxSize = 30;
@@ -198,7 +198,7 @@
     };
     const createLeaf03 = () => {
         let leaf = document.createElement("span");
-        leaf.className = "fallBasketball03";
+        leaf.className = "fallBadminton03";
     
         let minSize = 20;
         let maxSize = 30;
@@ -217,7 +217,7 @@
     };
     const createLeaf04 = () => {
         let leaf = document.createElement("span");
-        leaf.className = "fallBasketball04";
+        leaf.className = "fallBadminton04";
     
         let minSize = 20;
         let maxSize = 30;

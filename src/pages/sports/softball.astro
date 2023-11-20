@@ -2,10 +2,12 @@
 import { Icon } from "astro-iconify";
 import SubTitle from "../../components/SubTitle.astro";
 import LayoutSoftball from '../../layouts/LayoutSoftball.astro';
-import BasketD1F from "../../components/TimeTableItem/BasketD1F.astro";
-import BasketD1B from "../../components/TimeTableItem/BasketD1B.astro";
-import Rule04 from "../../components/rulePDF/Rule04.astro";
-import Rule05 from "../../components/rulePDF/Rule05.astro";
+import SoftD101 from "../../components/TimeTableItem/SoftD101.astro";
+import SoftD102 from "../../components/TimeTableItem/SoftD102.astro";
+import SoftD201 from "../../components/TimeTableItem/SoftD201.astro";
+import SoftD202 from "../../components/TimeTableItem/SoftD202.astro";
+import Rule13 from "../../components/rulePDF/Rule13.astro";
+import Rule14 from "../../components/rulePDF/Rule14.astro";
 ---
 <LayoutSoftball title="sports">
     <div class="sports">
@@ -16,6 +18,12 @@ import Rule05 from "../../components/rulePDF/Rule05.astro";
                 <p class="text-12">競技</p>
             </div>
             <div class="fixedIcons">
+                <div class="fixedIconHolder">
+                <Icon name="fa6-solid:baseball-bat-ball" class="fixedIcon" />
+                </div>
+                <div class="fixedIconHolder">
+                <Icon name="fa6-solid:baseball-bat-ball" class="fixedIcon" />
+                </div>
                 <div class="fixedIconHolder">
                 <Icon name="fa6-solid:baseball-bat-ball" class="fixedIcon" />
                 </div>
@@ -52,6 +60,8 @@ import Rule05 from "../../components/rulePDF/Rule05.astro";
             <div class="scrollItems">
                 <SoftD101 />
                 <SoftD102 />
+                <SoftD201 />
+                <SoftD202 />
             </div>
             </div>
         </div>
@@ -60,15 +70,15 @@ import Rule05 from "../../components/rulePDF/Rule05.astro";
             
         </div>
         <SubTitle title="ルールブック"/>
-        <Rule04 />
-        <Rule05 />
+        <Rule13 />
+        <Rule14 />
     </div>
 
 </LayoutBasketball>
 
 <style>
     .table {
-      height: 170px;
+      height: 290px;
       width: 100%;
       display: flex;
       border-radius: 4px;

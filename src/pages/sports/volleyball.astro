@@ -2,10 +2,7 @@
 import { Icon } from "astro-iconify";
 import SubTitle from "../../components/SubTitle.astro";
 import LayoutVolleyball from '../../layouts/LayoutVolleyball.astro';
-import BasketD1F from "../../components/TimeTableItem/BasketD1F.astro";
-import BasketD1B from "../../components/TimeTableItem/BasketD1B.astro";
-import Rule04 from "../../components/rulePDF/Rule04.astro";
-import Rule05 from "../../components/rulePDF/Rule05.astro";
+import Rule08 from "../../components/rulePDF/Rule08.astro";
 import ValleyD2 from "../../components/TimeTableItem/ValleyD2.astro";
 ---
 <LayoutVolleyball title="sports">
@@ -17,9 +14,6 @@ import ValleyD2 from "../../components/TimeTableItem/ValleyD2.astro";
                 <p class="text-12">競技</p>
             </div>
             <div class="fixedIcons">
-                <div class="fixedIconHolder">
-                <Icon name="fa-solid:volleyball-ball" class="fixedIcon" />
-                </div>
                 <div class="fixedIconHolder">
                 <Icon name="fa-solid:volleyball-ball" class="fixedIcon" />
                 </div>
@@ -60,15 +54,14 @@ import ValleyD2 from "../../components/TimeTableItem/ValleyD2.astro";
             
         </div>
         <SubTitle title="ルールブック"/>
-        <Rule04 />
-        <Rule05 />
+        <Rule08 />
     </div>
 
 </Layout//Basketball>
 
 <style>
     .table {
-      height: 170px;
+      height: 110px;
       width: 100%;
       display: flex;
       border-radius: 4px;
