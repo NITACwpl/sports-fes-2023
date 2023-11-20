@@ -1,13 +1,67 @@
 ---
 import SubTitle from "../SubTitle.astro";
-import Basket from "../TournamentItem/Basket.astro";
+import BaskertMap from "/tournaments/basketball.svg?raw";
+import TableTennisMap from "/tournaments/tabletennis.svg?raw";
+import TennisMap from "/tournaments/tennis.svg?raw";
+import SoftballMap from "/tournaments/softball.svg?raw";
+import SoccerMap from "/tournaments/soccer.svg?raw";
+import BadmintonMap from "/tournaments/badminton.svg?raw";
+import ValleyballMap from "/tournaments/valleyball.svg?raw";
+let maps = [
+    BaskertMap,
+    TableTennisMap,
+    TennisMap,
+    SoftballMap,
+    SoccerMap,
+    BadmintonMap,
+    ValleyballMap,
+];
 ---
 
 <div class="tournament" id="contents-tournament">
     <SubTitle title="トーナメント" />
-    <Basket />
-
+    <div class="acordion-wrapper">
+        {
+            maps.map(item => (
+                <div class="acordion-item">
+                    <Fragment set:html={item} />
+                </div>
+            ))
+        }
+    </div>
 </div>
+
+<script>
+    import { getWinner } from "../../lib/getTornamentWinner";
+
+    const sports = [
+        "basketball",
+        "tabletennis",
+        "tennis",
+        "softball",
+        "soccer",
+        "badminton",
+        "valleyball-female",
+        "valleyball-male",
+    ]
+
+    const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbzGDVB1KrosnxhTdX-TsP-_TW6w19PQF2UQ8v3OkPIsu5IZzweF031sKcvYoTKzzlyf/exec",
+    );
+    const fetchData = await response.json();
+
+    for (let i=0; i<sports.length; i++) {
+        let data;
+        if (sports[i] === "valleyball-female") {
+            data = fetchData[i + 2].slice(0, 3);
+        } else if (sports[i] === "valleyball-male") {
+            data = fetchData[i + 1].slice(3, 8);
+        } else {
+            data = fetchData[i + 2];
+        }
+        getWinner(sports[i], data);
+    }
+</script>
 
 <style is:global>
     .svg-tournament {
