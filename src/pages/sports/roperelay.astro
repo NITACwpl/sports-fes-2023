@@ -1,0 +1,159 @@
+---
+import { Icon } from "astro-iconify";
+import SubTitle from "../../components/SubTitle.astro";
+import LayoutRoperellay from '../../layouts/LayoutRoperellay.astro';
+import BasketD1F from "../../components/TimeTableItem/BasketD1F.astro";
+import BasketD1B from "../../components/TimeTableItem/BasketD1B.astro";
+import Rule04 from "../../components/rulePDF/Rule04.astro";
+import Rule05 from "../../components/rulePDF/Rule05.astro";
+---
+<LayoutRoperellay title="sports">
+    <div class="sports">
+        <SubTitle title="タイムテーブル" />
+        <div class="table">
+            <div class="fixed">
+            <div class="fixedTitle">
+                <p class="text-12">競技</p>
+            </div>
+            <div class="fixedIcons">
+                <div class="fixedIconHolder">
+                <Icon name="game-icons:rope-coil" class="fixedIcon" />
+                </div>
+                <div class="fixedIconHolder">
+                <Icon name="game-icons:rope-coil" class="fixedIcon" />
+                </div>
+            </div>
+            </div>
+            <div class="scroll">
+            <div class="scrollTitle">
+                <p class="num-12 timeItem">09:00</p>
+                <p class="num-12 timeItem">09:20</p>
+                <p class="num-12 timeItem">09:40</p>
+                <p class="num-12 timeItem">10:00</p>
+                <p class="num-12 timeItem">10:20</p>
+                <p class="num-12 timeItem">10:40</p>
+                <p class="num-12 timeItem">11:00</p>
+                <p class="num-12 timeItem">11:20</p>
+                <p class="num-12 timeItem">11:40</p>
+                <p class="num-12 timeItem">12:00</p>
+                <p class="num-12 timeItem">12:20</p>
+                <p class="num-12 timeItem">12:40</p>
+                <p class="num-12 timeItem">13:00</p>
+                <p class="num-12 timeItem">13:20</p>
+                <p class="num-12 timeItem">13:40</p>
+                <p class="num-12 timeItem">14:00</p>
+                <p class="num-12 timeItem">14:20</p>
+                <p class="num-12 timeItem">14:40</p>
+                <p class="num-12 timeItem">15:00</p>
+                <p class="num-12 timeItem">15:20</p>
+                <p class="num-12 timeItem">15:40</p>
+                <p class="num-12 timeItem">16:00</p>
+            </div>
+            <div class="scrollItems">
+                <RopeRelayD2 />
+            </div>
+            </div>
+        </div>
+        <SubTitle title="トーナメント結果"/>
+        <div>
+            
+        </div>
+        <SubTitle title="ルールブック"/>
+        <Rule04 />
+        <Rule05 />
+    </div>
+
+</LayoutBasketball>
+
+<style>
+    .table {
+      height: 170px;
+      width: 100%;
+      display: flex;
+      border-radius: 4px;
+      overflow-x: scroll;
+      background-color: var(--color-white);
+    }
+  
+    .fixedIcons{
+      position: sticky;
+      left: 0;
+      z-index: 1;
+    }
+  
+    .scrollTitle {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+  
+    .fixed {
+      position: sticky;
+      left: 0;
+      z-index: 2;
+    }
+  
+    .fixedTitle {
+      position: sticky;
+      left: 0;
+      top: 0;
+      z-index: 3;
+    }
+  
+    .fixed {
+      height: fit-content;
+      width: 60px;
+      border-radius: 4px 0 0 4px;
+    }
+    .fixedTitle {
+      height: 30px;
+      width: 60px;
+      background-color: var(--color-primary-orange-200);
+      color: var(--color-white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px 0 0 0;
+    }
+    .fixedIcons {
+      width: 100%;
+      background-color: var(--color-white);
+    }
+    .fixedIconHolder {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .fixedIcon {
+      width: 28px;
+      height: 28px;
+      color: var(--color-primary-orange-100);
+    }
+    .scroll {
+      width: 1950px;
+      border-radius: 0 4px 4px 0;
+      height: fit-content;
+    }
+    .scrollTitle {
+      height: 30px;
+      width: 1950px;
+      background-color: var(--color-primary-orange-200);
+      color: var(--color-white);
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      border-radius: 0 4px 0 0;
+      column-gap: 4px;
+    }
+    .timeItem {
+      width: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .scrollItems {
+      width: 1950px;
+    }
+  </style>
