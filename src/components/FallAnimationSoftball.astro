@@ -1,0 +1,242 @@
+<div class="Softball-Container">
+    <slot />
+</div>
+
+<style>
+    .Softball-Container {
+        width: 100%;
+        height: 100%;
+		display: flex;
+		justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+@keyframes fall01 {
+    0% {
+        opacity: 0;
+        top: 0;
+        transform: translateX(5px);
+        transform: rotate(-180deg);
+    }
+    10% {
+        opacity: var(--opacity-leaves);
+        transform: translateX(-5px);
+        transform: rotate(-144deg);
+    }
+    20% {
+        transform: translateX(5px);
+        transform: rotate(-108deg);
+    }
+    30% {
+        transform: translateX(-5px);
+        transform: rotate(-72deg);
+    }
+    40% {
+        transform: translateX(5px);
+        transform: rotate(-36deg);
+    }
+    50% {
+        transform: translateX(-5px);
+        transform: rotate(0deg);
+    }
+    60% {
+        transform: translateX(5px);
+        transform: rotate(36deg);
+    }
+    70% {
+        transform: translateX(-5px);
+        transform: rotate(72deg);
+    }
+    80% {
+        transform: translateX(5px);
+        transform: rotate(108deg);
+    }
+    90% {
+        opacity: var(--opacity-leaves);
+        transform: translateX(-5px);
+        transform: rotate(144deg);
+    }
+    100% {
+        opacity: 0;
+        top: 100vh;
+        transform: translateX(5px);
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes fall02 {
+    0% {
+        opacity: 0;
+        top: 0;
+        transform: translateX(5px);
+        transform: rotate(180deg);
+    }
+    10% {
+        opacity: var(--opacity-leaves);
+        transform: translateX(-5px);
+        transform: rotate(144deg);
+    }
+    20% {
+        transform: translateX(5px);
+        transform: rotate(108deg);
+    }
+    30% {
+        transform: translateX(-5px);
+        transform: rotate(72deg);
+    }
+    40% {
+        transform: translateX(5px);
+        transform: rotate(36deg);
+    }
+    50% {
+        transform: translateX(-5px);
+        transform: rotate(0deg);
+    }
+    60% {
+        transform: translateX(5px);
+        transform: rotate(-36deg);
+    }
+    70% {
+        transform: translateX(-5px);
+        transform: rotate(-72deg);
+    }
+    80% {
+        transform: translateX(5px);
+        transform: rotate(-108deg);
+    }
+    90% {
+        opacity: var(--opacity-leaves);
+        transform: translateX(-5px);
+        transform: rotate(-144deg);
+    }
+    100% {
+        opacity: 0;
+        top: 100vh;
+        transform: translateX(5px);
+        transform: rotate(-180deg);
+    }
+}
+</style>
+
+<style is:global>
+	/* JSで管理していてmoduleCSSだとバグるので、、 */
+    .fallSoftball01 {
+        background-image: url(/fallsports/baseball_brown.svg); /* TODO */
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        animation: fall01 10s linear;
+		z-index: -1;
+    }
+    .fallSoftball02 {
+        background-image: url(/fallsports/baseball_green.svg); /* TODO */
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        animation: fall02 12s linear;
+		z-index: -1;
+    }
+    .fallSoftball03 {
+        background-image: url(/fallsports/baseball_red.svg); /* TODO */
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        animation: fall01 14s linear;
+		z-index: -1;
+    }
+    .fallSoftball04 {
+        background-image: url(/fallsports/baseball_yellow.svg); /* TODO */
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        animation: fall02 16s linear;
+		z-index: -1;
+    }
+</style>
+
+<script>
+    let leafContainer = document.querySelector(".Softball-Container");
+    
+    const createLeaf01 = () => {
+        let leaf = document.createElement("span");
+        leaf.className = "fallSoftball01";
+    
+        let minSize = 20;
+        let maxSize = 30;
+    
+        let leafSize = Math.random() * (maxSize - minSize) + minSize;
+        leaf.style.width = leafSize + "px";
+        leaf.style.height = leafSize + "px";
+        
+        leaf.style.left = Math.random() * 100 + "%";
+
+        leafContainer.appendChild(leaf);
+
+        setTimeout(() => {
+            leaf.remove();
+        }, 10000);
+    };
+    const createLeaf02 = () => {
+        let leaf = document.createElement("span");
+        leaf.className = "fallSoftball02";
+    
+        let minSize = 20;
+        let maxSize = 30;
+    
+        let leafSize = Math.random() * (maxSize - minSize) + minSize;
+        leaf.style.width = leafSize + "px";
+        leaf.style.height = leafSize + "px";
+        
+        leaf.style.left = Math.random() * 100 + "%";
+
+        leafContainer.appendChild(leaf);
+
+        setTimeout(() => {
+            leaf.remove();
+        }, 12000);
+    };
+    const createLeaf03 = () => {
+        let leaf = document.createElement("span");
+        leaf.className = "fallSoftball03";
+    
+        let minSize = 20;
+        let maxSize = 30;
+    
+        let leafSize = Math.random() * (maxSize - minSize) + minSize;
+        leaf.style.width = leafSize + "px";
+        leaf.style.height = leafSize + "px";
+        
+        leaf.style.left = Math.random() * 100 + "%";
+
+        leafContainer.appendChild(leaf);
+
+        setTimeout(() => {
+            leaf.remove();
+        }, 14000);
+    };
+    const createLeaf04 = () => {
+        let leaf = document.createElement("span");
+        leaf.className = "fallSoftball04";
+    
+        let minSize = 20;
+        let maxSize = 30;
+    
+        let leafSize = Math.random() * (maxSize - minSize) + minSize;
+        leaf.style.width = leafSize + "px";
+        leaf.style.height = leafSize + "px";
+        
+        leaf.style.left = Math.random() * 100 + "%";
+
+        leafContainer.appendChild(leaf);
+
+        setTimeout(() => {
+            leaf.remove();
+        }, 16000);
+    };
+    setInterval(createLeaf01, 1000);
+    setInterval(createLeaf02, 1500);
+    setInterval(createLeaf03, 2000);
+    setInterval(createLeaf04, 2500);
+</script>
+
