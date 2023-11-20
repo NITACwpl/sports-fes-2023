@@ -8,13 +8,7 @@ export async function fetchNewsData() {
 
     const response = await fetch(scriptUrl);
     const jsonData = await response.json();
-    const data = jsonData[0].sort((a, b) => {
-      const dateA = new Date(a.updateAt);
-      const dateB = new Date(b.updateAt);
-    
-      // b - aで降順ソート
-      return dateA - dateB;
-    });
+    const data = jsonData[0];
     for (let i = 0; i < data.length; i++) {
       let nowTime = new Date(data[i][1]);
       const jpDateTimeFormat = new Intl.DateTimeFormat('ja-JP', {
