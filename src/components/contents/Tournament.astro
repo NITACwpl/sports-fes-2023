@@ -7,6 +7,7 @@ import SoftballMap from "/tournaments/softball.svg?raw";
 import SoccerMap from "/tournaments/soccer.svg?raw";
 import BadmintonMap from "/tournaments/badminton.svg?raw";
 import ValleyballMap from "/tournaments/valleyball.svg?raw";
+import Icon from "astro-iconify";
 let maps = [
     {
         image: BaskertMap,
@@ -41,6 +42,12 @@ let maps = [
 
 <div class="tournament" id="contents-tournament">
     <SubTitle title="トーナメント" />
+
+    <button class="reload-wrapper">
+        <Icon name="ion:reload" class="reload-icon" />
+        <p class="text-16">最新情報をGet!!</p>
+    </button>
+
     <div class="acordion-wrapper">
         {
         maps.map(item => (
@@ -64,6 +71,24 @@ let maps = [
 
     .winner {
         fill: red;
+    }
+
+    .reload-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        margin-block: 20px;
+        padding: 10px;
+        border-radius: 4px;
+        background-color: var(--color-primary-orange-200);
+        cursor: pointer;
+    }
+
+    .reload-icon {
+        width: 16px;
+        height: 16px;
+        margin-inline: 5px;
     }
 
     .acordion-wrapper {
