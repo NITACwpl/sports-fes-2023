@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-iconify";
+import SmallSubTitle from "../../components/SmallSubTitle.astro";
 import BigSubTitle from "../../components/BigSubTitle.astro";
 import SubTitle from "../../components/SubTitle.astro";
 import LayoutSoccer from '../../layouts/LayoutSoccer.astro';
@@ -12,15 +13,13 @@ import SoccerD2 from "../../components/TimeTableItem/SoccerD2.astro";
     <div class="sports">
       <BigSubTitle title="サッカー"/>
         <SubTitle title="タイムテーブル" />
+        <SmallSubTitle title="1日目"/>
         <div class="table">
             <div class="fixed">
             <div class="fixedTitle">
                 <p class="text-12">競技</p>
             </div>
             <div class="fixedIcons">
-                <div class="fixedIconHolder">
-                <Icon name="fluent:sport-soccer-24-filled" class="fixedIcon" />
-                </div>
                 <div class="fixedIconHolder">
                 <Icon name="fluent:sport-soccer-24-filled" class="fixedIcon" />
                 </div>
@@ -53,10 +52,51 @@ import SoccerD2 from "../../components/TimeTableItem/SoccerD2.astro";
             </div>
             <div class="scrollItems">
                 <SoccerD1 />
-                <SoccerD2 />
             </div>
             </div>
-        </div>
+        </div>       
+        <SmallSubTitle title="2日目"/>
+        <div class="table">
+          <div class="fixed">
+          <div class="fixedTitle">
+              <p class="text-12">競技</p>
+          </div>
+          <div class="fixedIcons">
+              <div class="fixedIconHolder">
+              <Icon name="fluent:sport-soccer-24-filled" class="fixedIcon" />
+              </div>
+          </div>
+          </div>
+          <div class="scroll">
+          <div class="scrollTitle">
+              <p class="num-12 timeItem">09:00</p>
+              <p class="num-12 timeItem">09:20</p>
+              <p class="num-12 timeItem">09:40</p>
+              <p class="num-12 timeItem">10:00</p>
+              <p class="num-12 timeItem">10:20</p>
+              <p class="num-12 timeItem">10:40</p>
+              <p class="num-12 timeItem">11:00</p>
+              <p class="num-12 timeItem">11:20</p>
+              <p class="num-12 timeItem">11:40</p>
+              <p class="num-12 timeItem">12:00</p>
+              <p class="num-12 timeItem">12:20</p>
+              <p class="num-12 timeItem">12:40</p>
+              <p class="num-12 timeItem">13:00</p>
+              <p class="num-12 timeItem">13:20</p>
+              <p class="num-12 timeItem">13:40</p>
+              <p class="num-12 timeItem">14:00</p>
+              <p class="num-12 timeItem">14:20</p>
+              <p class="num-12 timeItem">14:40</p>
+              <p class="num-12 timeItem">15:00</p>
+              <p class="num-12 timeItem">15:20</p>
+              <p class="num-12 timeItem">15:40</p>
+              <p class="num-12 timeItem">16:00</p>
+          </div>
+          <div class="scrollItems">
+            <SoccerD2 />
+          </div>
+          </div>
+      </div>
         <SubTitle title="トーナメント結果"/>
         <div>
             
@@ -70,7 +110,7 @@ import SoccerD2 from "../../components/TimeTableItem/SoccerD2.astro";
 
 <style>
     .table {
-      height: 170px;
+      height: 110px;
       width: 100%;
       display: flex;
       border-radius: 4px;
