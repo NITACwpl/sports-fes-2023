@@ -8,13 +8,34 @@ import SoccerMap from "/tournaments/soccer.svg?raw";
 import BadmintonMap from "/tournaments/badminton.svg?raw";
 import ValleyballMap from "/tournaments/valleyball.svg?raw";
 let maps = [
-    BaskertMap,
-    TableTennisMap,
-    TennisMap,
-    SoftballMap,
-    SoccerMap,
-    BadmintonMap,
-    ValleyballMap,
+    {
+        image: BaskertMap,
+        name: "バスケットボール",
+    },
+    {
+        image: TableTennisMap,
+        name: "卓球",
+    },
+    {
+        image: TennisMap,
+        name: "テニス",
+    },
+    {
+        image: SoftballMap,
+        name: "ソフトボール",
+    },
+    {
+        image: SoccerMap,
+        name: "サッカー",
+    },
+    {
+        image: BadmintonMap,
+        name: "バドミントン",
+    },
+    {
+        image: ValleyballMap,
+        name: "バレーボール",
+    },
 ];
 ---
 
@@ -22,12 +43,15 @@ let maps = [
     <SubTitle title="トーナメント" />
     <div class="acordion-wrapper">
         {
-            maps.map(item => (
-                // acordion here
-                <div class="acordion-item">
-                    <Fragment set:html={item} />
-                </div>
-            ))
+        maps.map(item => (
+        // acordion here
+        <details class="accordion-001">
+        <summary>{item.name}</summary>
+        <div>
+            <Fragment set:html={item.image} />
+        </div>
+        </details>
+        ))
         }
     </div>
 </div>
@@ -46,9 +70,56 @@ let maps = [
         margin-inline: auto;
     }
 
-    .acordion-item {
-        border-radius: 4px;
-        overflow: hidden;
+
+    .accordion-001 {
+        max-width: 100%;
+        max-height: 600px;
+        background-color: #ffe6c7;
+    }
+
+    .accordion-001:not([open]) {
+        margin-bottom: 7px;
+    }
+
+    .accordion-001 summary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: 1em 2em;
+        border-radius: 5px;
+        background-color: #ffa114;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .accordion-001 summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .accordion-001 summary::before,
+    .accordion-001 summary::after {
+        width: 3px;
+        height: .9em;
+        border-radius: 5px;
+        background-color: #fff;
+        content: '';
+    }
+
+    .accordion-001 summary::before {
+        position: absolute;
+        right: 2em;
+        rotate: 90deg;
+    }
+
+    .accordion-001 summary::after {
+        transition: rotate .3s;
+    }
+
+    .accordion-001[open] summary::after {
+        rotate: 90deg;
     }
 </style>
 
@@ -71,7 +142,7 @@ let maps = [
     );
     const fetchData = await response.json();
 
-    for (let i=0; i<sports.length; i++) {
+    for (let i = 0; i < sports.length; i++) {
         let data;
         if (sports[i] === "valleyball-female") {
             data = fetchData[i + 2].slice(0, 3);
