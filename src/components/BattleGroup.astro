@@ -1,6 +1,6 @@
 ---
 interface Props {
-    type: 'lunch' | 'battle' | 'all';
+    type: 'lunch' | 'battle' | 'battleVolley' | 'all';
     startId: string;
     endId: string;
     kou?: string;
@@ -21,6 +21,15 @@ const { type, startId, endId, kou, otsu } = Astro.props;
             return (
                 <div class={`battle-group battle ${startId} ${endId}`}>
                     <p class="text-16">{kou === "0" ? "未" : kou} vs {otsu === "0" ? "未" : otsu}</p>
+                </div>
+            );
+        case 'battleVolley':
+            return (
+                <div class={`battle-group-volley battle ${startId} ${endId}`}>
+                    <p class="text-12 line-clamp">{kou === "0" ? "未" : kou}</p>
+                        <p class="text-12 line-clamp"> vs </p>
+                    <p class="text-12 line-clamp">{otsu === "0" ? "未" : otsu}</p>
+                    
                 </div>
             );
         case 'all':
@@ -46,6 +55,21 @@ const { type, startId, endId, kou, otsu } = Astro.props;
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    .battle-group-volley {
+        height: 50px;
+        border-radius: 4px;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .line-clamp {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden; 
     }
     .nothing {
         background-color: var(--color-primary-orange-300);

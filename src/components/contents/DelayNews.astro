@@ -23,12 +23,9 @@ const response = await fetchDelayNewsData();
         <DelayNewsItem name={delayValue.name} updateAt={delayValue.updateAt} delay={delayValue.delay} isLastContent={index == response.length - 1} />
       ))
     ) : (
-      response ? (
         <div class="text-12 text-center">遅延情報はありません。</div>
-      ) : (
-        <div class="text-12 text-center">遅延情報を取得できませんでした。</div>
-      )
-    )}
+    )
+    }
   </div>
 </div>
 
