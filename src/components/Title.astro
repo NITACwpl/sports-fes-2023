@@ -8,6 +8,61 @@ import { Icon } from "astro-iconify";
     <Icon name="ion:search" class="searchIcon" />
 </div>
 
+<div class="searchContainer">
+    <Icon name="ion:close" class="closeBtn" />
+    <p class="note text-16">クリックすると競技ごとに閲覧できます</p>
+    <ul class="jumpLink">
+        <li class="text-20">
+            <a href="/sports/basketball">
+                <Icon name="fa6-solid:basketball" class="sportIcon" />
+                バスケットボール
+            </a>
+        </li>
+        <li class="text-20">
+            <a href="/sports/tabletennis">
+                <Icon name="fa-solid:table-tennis" class="sportIcon" />
+                卓球
+            </a>
+        </li>
+        <li class="text-20">
+            <a href="/sports/tennis">
+                <Icon name="cil:tennis" class="sportIcon" />
+                硬式テニス
+            </a>
+        </li>
+        <li class="text-20">
+            <a href="/sports/softball">
+                <Icon name="fa6-solid:baseball-bat-ball" class="sportIcon" />
+                ソフトボール
+            </a>
+        </li>
+        <li class="text-20">
+            <a href="/sports/soccer">
+                <Icon name="fluent:sport-soccer-24-filled" class="sportIcon" />
+                サッカー
+            </a>
+        </li>
+        <li class="text-20">
+            <a href="/sports/badminton">
+                <Icon name="icon-park-outline:badminton" class="sportIcon" />
+                バドミントン
+            </a>
+        </li>
+        <li class="text-20">
+            <a href="/sports/volleyball">
+                <Icon name="fa-solid:volleyball-ball" class="sportIcon" />
+                バレーボール
+            </a>
+        </li>
+        <li class="text-20">
+            <a href="/sports/roperelay">
+                <Icon name="fa6-solid:earth-africa" class="sportIcon" />
+                綱引き・リレー
+            </a>
+        </li>
+    </ul>
+</div>
+
 <style>
     .titleContainer {
         display: flex;
@@ -26,4 +81,63 @@ import { Icon } from "astro-iconify";
         height: 24px;
         color: var(--color-white);
     }
+    .searchContainer {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
+        max-width: 800px;
+        height: 100dvh;
+        background-color: var(--color-primary-orange-100);
+        display: none;
+        padding: 10px 0;
+        flex-direction: column;
+        justify-content: start;
+        z-index: 15;
+        color: var(--color-white);
+    }
+    .is-active {
+        display: flex;
+    }
+    .note {
+        margin-bottom: 20px;
+        margin-left: 20px;
+        padding-bottom:3px;
+        border-bottom: 2px solid var(--color-white);
+        width: fit-content;
+    }
+    li {
+        list-style: none;
+        padding-left: 20px;
+        margin-bottom: 10px;
+        align-items: center;
+        display: flex;
+    }
+    a {
+        color: var(--color-white);
+        text-decoration: none;
+    }
+    .closeBtn {
+        align-self: flex-end;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        margin: 16px 16px 24px 16px;
+    }
+    .sportIcon {
+        width: 24px;
+        height: 24px;
+        color: var(--color-white);
+        margin-right: 10px;
+    }
 </style>
+
+<script>
+    document.querySelector('.searchIcon').addEventListener('click', function(){
+        document.querySelector('.searchContainer').classList.toggle('is-active');
+    });
+    document.querySelector('.closeBtn').addEventListener('click', function(){
+        document.querySelector('.searchContainer').classList.toggle('is-active');
+    });
+</script>
