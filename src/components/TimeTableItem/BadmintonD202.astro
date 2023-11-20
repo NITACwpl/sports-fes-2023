@@ -1,10 +1,9 @@
 ---
 import { Icon } from "astro-iconify";
 import BattleGroup from "../BattleGroup.astro";
+import { fetchTimeTableData } from "../../lib/fetchTimeTableData";
 
-const responce = [
-    { kou: "0", otsu: "0" },
-    { kou: "0", otsu: "0" },
+var responce = [
     { kou: "0", otsu: "0" },
     { kou: "0", otsu: "0" },
     { kou: "0", otsu: "0" },
@@ -15,6 +14,8 @@ const responce = [
     { kou: "0", otsu: "0" },
     { kou: "0", otsu: "0" },
 ];
+
+responce = await fetchTimeTableData("BadmintonD202");
 ---
 <div class="plus">
     <div class="kyogi">
@@ -23,7 +24,7 @@ const responce = [
         </div>
         <div class="place">
             <Icon name="ph:map-pin-fill" class="placeIcon" />
-            <p class="text-12">体育館(前)</p>
+            <p class="text-12">体育館(前2)</p>
         </div>
     </div>
     <div class="table"> <!-- typeはlunch, battleに。startIdはstart0900-1540まで。endIdは0920-1600まで。kouとotsuはなくてもOk  -->
@@ -36,9 +37,7 @@ const responce = [
         <BattleGroup type="battle" startId="start1200" endId="end1220" kou={responce[6].kou} otsu={responce[6].otsu} />
         <BattleGroup type="lunch" startId="start1220" endId="end1300" />
         <BattleGroup type="battle" startId="start1300" endId="end1320" kou={responce[7].kou} otsu={responce[7].otsu} />
-        <BattleGroup type="battle" startId="start1320" endId="end1340" kou={responce[8].kou} otsu={responce[8].otsu} />
-        <BattleGroup type="battle" startId="start1400" endId="end1420" kou={responce[9].kou} otsu={responce[9].otsu} />
-        <BattleGroup type="battle" startId="start1420" endId="end1440" kou={responce[10].kou} otsu={responce[10].otsu} />
+        <BattleGroup type="battle" startId="start1400" endId="end1420" kou={responce[8].kou} otsu={responce[8].otsu} />
     </div>
 </div>
 
