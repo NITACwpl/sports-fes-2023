@@ -1,15 +1,17 @@
 ---
 import { Icon } from "astro-iconify";
+import BigSubTitle from "../../components/BigSubTitle.astro";
 import SubTitle from "../../components/SubTitle.astro";
 import LayoutTennis from '../../layouts/LayoutTennis.astro';
 import TennisD1F from "../../components/TimeTableItem/TennisD1F.astro";
 import TennisD1C from "../../components/TimeTableItem/TennisD1C.astro";
-import Rule04 from "../../components/rulePDF/Rule04.astro";
-import Rule05 from "../../components/rulePDF/Rule05.astro";
+import Rule11 from "../../components/rulePDF/Rule11.astro";
+import Rule12 from "../../components/rulePDF/Rule12.astro";
 import TennisD1B from "../../components/TimeTableItem/TennisD1B.astro";
 ---
 <LayoutTennis title="sports">
     <div class="sports">
+      <BigSubTitle title="硬式テニス"/>
         <SubTitle title="タイムテーブル" />
         <div class="table">
             <div class="fixed">
@@ -65,8 +67,8 @@ import TennisD1B from "../../components/TimeTableItem/TennisD1B.astro";
             
         </div>
         <SubTitle title="ルールブック"/>
-        <Rule04 />
-        <Rule05 />
+        <Rule11 />
+        <Rule12 />
     </div>
 
 </LayoutBasketball>

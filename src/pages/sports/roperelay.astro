@@ -1,12 +1,15 @@
 ---
 import { Icon } from "astro-iconify";
+import BigSubTitle from "../../components/BigSubTitle.astro";
 import SubTitle from "../../components/SubTitle.astro";
 import LayoutRopeRellay from '../../layouts/LayoutRopeRelay.astro';
 import RopeRelayD2 from "../../components/TimeTableItem/RopeRelayD2.astro";
+import Rule17 from "../../components/rulePDF/Rule17.astro";
 import Rule18 from "../../components/rulePDF/Rule18.astro";
 ---
 <LayoutRopeRellay title="sports">
     <div class="sports">
+      <BigSubTitle title="リレー・綱引き"/>
         <SubTitle title="タイムテーブル" />
         <div class="table">
             <div class="fixed">
@@ -15,7 +18,8 @@ import Rule18 from "../../components/rulePDF/Rule18.astro";
             </div>
             <div class="fixedIcons">
                 <div class="fixedIconHolder">
-                <Icon name="game-icons:rope-coil" class="fixedIcon" />
+                  <Icon name="bx:run" class="fixedIcon" />
+                  <Icon name="game-icons:rope-coil" class="fixedIcon" />
                 </div>
             </div>
             </div>
@@ -54,6 +58,7 @@ import Rule18 from "../../components/rulePDF/Rule18.astro";
             
         </div>
         <SubTitle title="ルールブック"/>
+        <Rule17 />
         <Rule18 />
     </div>
 

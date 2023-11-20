@@ -121,32 +121,64 @@
 
 <style is:global>
 	/* JSで管理していてmoduleCSSだとバグるので、、 */
-    .RopeRelay01 {
-        background-image: url(/fallsports/basketball-ball_red.svg); /* TODO */
+    .Rope01 {
+        background-image: url(/fallsports/rope-coil_brown.svg); /* TODO */
         background-size: cover;
         background-position: center;
         position: absolute;
         animation: fall01 10s linear;
 		z-index: -1;
     }
-    .RopeRelay02 {
-        background-image: url(/fallsports/basketball-ball_yello.svg); /* TODO */
+    .Rope02 {
+        background-image: url(/fallsports/rope-coil_green.svg); /* TODO */
         background-size: cover;
         background-position: center;
         position: absolute;
         animation: fall02 10s linear;
 		z-index: -1;
     }
-    .RopeRelay03 {
-        background-image: url(/fallsports/basketball-ball_green.svg); /* TODO */
+    .Rope03 {
+        background-image: url(/fallsports/rope-coil_red.svg); /* TODO */
         background-size: cover;
         background-position: center;
         position: absolute;
         animation: fall01 10s linear;
 		z-index: -1;
     }
-    .RopeRelay04 {
-        background-image: url(/fallsports/basketball-ball_brown.svg); /* TODO */
+    .Rope04 {
+        background-image: url(/fallsports/rope-coil_yellow.svg); /* TODO */
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        animation: fall02 10s linear;
+		z-index: -1;
+    }
+    .Relay01 {
+        background-image: url(/fallsports/run_brown.svg); /* TODO */
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        animation: fall02 10s linear;
+		z-index: -1;
+    }
+    .Relay02 {
+        background-image: url(/fallsports/run_green.svg); /* TODO */
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        animation: fall02 10s linear;
+		z-index: -1;
+    }
+    .Relay03 {
+        background-image: url(/fallsports/run_red.svg); /* TODO */
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        animation: fall02 10s linear;
+		z-index: -1;
+    }
+    .Relay04 {
+        background-image: url(/fallsports/run_yellow.svg); /* TODO */
         background-size: cover;
         background-position: center;
         position: absolute;
@@ -160,7 +192,7 @@
     
     const createLeaf01 = () => {
         let leaf = document.createElement("span");
-        leaf.className = "RopeRelay01";
+        leaf.className = "Rope01";
     
         let minSize = 20;
         let maxSize = 30;
@@ -179,7 +211,7 @@
     };
     const createLeaf02 = () => {
         let leaf = document.createElement("span");
-        leaf.className = "RopeRelay02";
+        leaf.className = "Rope02";
     
         let minSize = 20;
         let maxSize = 30;
@@ -198,7 +230,7 @@
     };
     const createLeaf03 = () => {
         let leaf = document.createElement("span");
-        leaf.className = "RopeRelay03";
+        leaf.className = "Rope03";
     
         let minSize = 20;
         let maxSize = 30;
@@ -217,7 +249,26 @@
     };
     const createLeaf04 = () => {
         let leaf = document.createElement("span");
-        leaf.className = "RopeRelay04";
+        leaf.className = "Rope04";
+    
+        let minSize = 20;
+        let maxSize = 30;
+    
+        let leafSize = Math.random() * (maxSize - minSize) + minSize;
+        leaf.style.width = leafSize + "px";
+        leaf.style.height = leafSize + "px";
+        
+        leaf.style.left = Math.random() * 100 + "%";
+
+        leafContainer.appendChild(leaf);
+
+        setTimeout(() => {
+            leaf.remove();
+        }, 10000);
+    };    
+    const createLeaf05 = () => {
+        let leaf = document.createElement("span");
+        leaf.className = "Relay01";
     
         let minSize = 20;
         let maxSize = 30;
@@ -234,9 +285,71 @@
             leaf.remove();
         }, 10000);
     };
-    setInterval(createLeaf01, 1000);
-    setInterval(createLeaf02, 1000);
-    setInterval(createLeaf03, 1000);
-    setInterval(createLeaf04, 1000);
+    const createLeaf06 = () => {
+        let leaf = document.createElement("span");
+        leaf.className = "Relay02";
+    
+        let minSize = 20;
+        let maxSize = 30;
+    
+        let leafSize = Math.random() * (maxSize - minSize) + minSize;
+        leaf.style.width = leafSize + "px";
+        leaf.style.height = leafSize + "px";
+        
+        leaf.style.left = Math.random() * 100 + "%";
+
+        leafContainer.appendChild(leaf);
+
+        setTimeout(() => {
+            leaf.remove();
+        }, 10000);
+    };
+    
+    const createLeaf07 = () => {
+        let leaf = document.createElement("span");
+        leaf.className = "Relay03";
+    
+        let minSize = 20;
+        let maxSize = 30;
+    
+        let leafSize = Math.random() * (maxSize - minSize) + minSize;
+        leaf.style.width = leafSize + "px";
+        leaf.style.height = leafSize + "px";
+        
+        leaf.style.left = Math.random() * 100 + "%";
+
+        leafContainer.appendChild(leaf);
+
+        setTimeout(() => {
+            leaf.remove();
+        }, 10000);
+    };
+    const createLeaf08 = () => {
+        let leaf = document.createElement("span");
+        leaf.className = "Relay04";
+    
+        let minSize = 20;
+        let maxSize = 30;
+    
+        let leafSize = Math.random() * (maxSize - minSize) + minSize;
+        leaf.style.width = leafSize + "px";
+        leaf.style.height = leafSize + "px";
+        
+        leaf.style.left = Math.random() * 100 + "%";
+
+        leafContainer.appendChild(leaf);
+
+        setTimeout(() => {
+            leaf.remove();
+        }, 10000);
+    };
+    setInterval(createLeaf01, 2000);
+    setInterval(createLeaf02, 2000);
+    setInterval(createLeaf03, 2000);
+    setInterval(createLeaf04, 2000);
+    setInterval(createLeaf05, 2000);
+    setInterval(createLeaf06, 2000);
+    setInterval(createLeaf07, 2000);
+    setInterval(createLeaf08, 2000);
 </script>
 
