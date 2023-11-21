@@ -166,58 +166,6 @@
         </g>
       </g>
     </g>
-    <g class="step1">
-      <g class="round5">
-        <g class="round5B">
-          <path fill="#F6F1EE" d="M1657 662h39v106h-39V662Z"/>
-          <path fill="#6C5F5B" d="M1696 662h3v-3h-3v3Zm-39 3h39v-6h-39v6Zm36-3v106h6V662h-6Z"/>
-        </g>
-        <g class="round5A">
-          <path fill="#F6F1EE" d="M1618 662h39v106h-39V662Z"/>
-          <path fill="#6C5F5B" d="M1618 662v-3h-3v3h3Zm0 3h39v-6h-39v6Zm3 103V662h-6v106h6Z"/>
-        </g>
-      </g>
-      <g class="round4">
-        <g class="round4B">
-          <path fill="#F6F1EE" d="M1422 662h39v106h-39V662Z"/>
-          <path fill="#6C5F5B" d="M1461 662h3v-3h-3v3Zm-39 3h39v-6h-39v6Zm36-3v106h6V662h-6Z"/>
-        </g>
-        <g class="round4A">
-          <path fill="#F6F1EE" d="M1383 662h39v106h-39V662Z"/>
-          <path fill="#6C5F5B" d="M1383 662v-3h-3v3h3Zm0 3h39v-6h-39v6Zm3 103V662h-6v106h6Z"/>
-        </g>
-      </g>
-      <g class="round3">
-        <g class="round3B">
-          <path fill="#F6F1EE" d="M1030 662h39v106h-39V662Z"/>
-          <path fill="#6C5F5B" d="M1069 662h3v-3h-3v3Zm-39 3h39v-6h-39v6Zm36-3v106h6V662h-6Z"/>
-        </g>
-        <g class="round3A">
-          <path fill="#F6F1EE" d="M991 662h39v106h-39V662Z"/>
-          <path fill="#6C5F5B" d="M991 662v-3h-3v3h3Zm0 3h39v-6h-39v6Zm3 103V662h-6v106h6Z"/>
-        </g>
-      </g>
-      <g class="round2">
-        <g class="round2B">
-          <path fill="#F6F1EE" d="M630 662h43v106h-43V662Z"/>
-          <path fill="#6C5F5B" d="M673 662h3v-3h-3v3Zm-43 3h43v-6h-43v6Zm40-3v106h6V662h-6Z"/>
-        </g>
-        <g class="round2A">
-          <path fill="#F6F1EE" d="M587 662h43v106h-43V662Z"/>
-          <path fill="#6C5F5B" d="M587 662v-3h-3v3h3Zm0 3h43v-6h-43v6Zm3 103V662h-6v106h6Z"/>
-        </g>
-      </g>
-      <g class="round1">
-        <g class="round1B">
-          <path fill="#F6F1EE" d="M219 662h43v106h-43V662Z"/>
-          <path fill="#6C5F5B" d="M262 662h3v-3h-3v3Zm-43 3h43v-6h-43v6Zm40-3v106h6V662h-6Z"/>
-        </g>
-        <g class="round1A">
-          <path fill="#F6F1EE" d="M176 662h43v106h-43V662Z"/>
-          <path fill="#6C5F5B" d="M176 662v-3h-3v3h3Zm0 3h43v-6h-43v6Zm3 103V662h-6v106h6Z"/>
-        </g>
-      </g>
-    </g>
     <g class="çå">
       <path fill="#ED7D31" d="M920.355 128.549c2.783 0 4.645-2.187 4.645-4.887V84.655c0-1.977-.94-3.76-2.379-4.514-1.442-.76-3.097-.34-4.2 1.058l-7.416 9.408c-1.506 1.909-3.945 1.909-5.449 0l-14.331-18.176c-1.504-1.908-3.946-1.908-5.45 0l-14.331 18.176c-1.504 1.908-3.943 1.908-5.449 0l-7.416-9.408c-1.103-1.398-2.761-1.818-4.2-1.058-1.439.754-2.379 2.537-2.379 4.514v39.007c0 2.7 1.869 4.887 4.652 4.887h63.703Z" class="Vector"/>
     </g>
