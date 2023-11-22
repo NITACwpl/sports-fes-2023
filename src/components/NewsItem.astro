@@ -9,7 +9,7 @@ const { content, updateAt } = Astro.props;
 
 <div class="announcement-item">
     {updateAt && <p class="date num-10">{updateAt}</p>}<!--2023-11-19-->
-    <p class="title" class="text-12">{content}</p>
+    <p class="title" class="text-12" set:html={content} /p>
 </div>
 
 <style>
