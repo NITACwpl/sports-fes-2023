@@ -207,8 +207,8 @@ let maps = [
         "softball",
         "soccer",
         "badminton",
-        "valleyball-female",
         "valleyball-male",
+        "valleyball-female",
     ];
 
     let fetchData;
@@ -225,13 +225,14 @@ let maps = [
         } finally {
             for (let i = 0; i < sports.length; i++) {
                 let data;
-                if (sports[i] === "valleyball-female") {
-                    data = fetchData[i + 2].slice(0, 3);
-                } else if (sports[i] === "valleyball-male") {
-                    data = fetchData[i + 1].slice(3, 8);
+                if (sports[i] === "valleyball-male") {
+                    data = fetchData[i + 2].slice(0, 5);
+                } else if (sports[i] === "valleyball-female") {
+                    data = fetchData[i + 1].slice(5, 8);
                 } else {
                     data = fetchData[i + 2];
                 }
+                console.log(data)
                 getWinner(sports[i], data);
             }
             document.querySelector("#loading").classList.remove("is-active");
