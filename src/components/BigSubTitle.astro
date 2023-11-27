@@ -1,0 +1,44 @@
+---
+import { Icon } from "astro-iconify"
+
+interface Props {
+	title: string;
+    subTitle?: string;
+    sportIcon?: string;
+}
+
+const { title, subTitle, sportIcon } = Astro.props;
+---
+<div class="titleContainer">
+    <img src="/fish.svg" class="fishTitle">
+    <h2 class="title text-24">{title}</h2>
+</div>
+
+<style>
+    .titleContainer {
+        position: relative;
+        width: fit-content;
+        display: flex;
+        justify-content: start;
+        column-gap: 15px;
+        margin-top: 12px;
+        margin-bottom: 20px;
+    }
+    .title {
+        color: var(--color-black);
+        z-index: 2;
+        padding-left: 20px;
+    }
+    .fishTitle{
+        position: absolute;
+        height: 500%;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0.3;
+    }
+    .subTitle {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+</style>
