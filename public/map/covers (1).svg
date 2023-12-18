@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="525" height="365" fill="none" viewBox="0 0 525 365">
+  <g class="covers">
+    <path fill="#D9D9D9" fill-opacity=".01" d="M0 0h525v365H0z" class="Rectangle 54"/>
+    <path fill="#D1F1F7" fill-opacity=".01" d="M313.895 146.784 174.875 208l-14.5-32v-22h-9.5l-42.5-97.5 23.5-38.5h260.5l-78.48 128.784Z" class="cover_ground"/>
+    <path fill="#B9FFD8" fill-opacity=".01" d="M76.921 114.969 122.875 95.5l25 58.5h12.5v27.5h-1l12.817 30.406-45.954 19.469-21.363-49.875h-16.5V154h4l-15.454-39.031Z" class="cover_gym"/>
+    <path fill="#FF9898" fill-opacity=".01" d="M25.564 229.362 27.875 228v-10.5h24.5l41.555-19 15.095 33.437-6.65 3.063v11.5h-26l-35.717 16.3-8.783-16.3h-4V236l-2.311-6.638Z" class="cover_dojo"/>
+    <path fill="#FFCDA2" fill-opacity=".01" d="M376 121h127v121H376z" class="cover_tennis"/>
+  </g>
+</svg>
